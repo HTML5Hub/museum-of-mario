@@ -1,0 +1,58 @@
+.centerContentsVertically{
+	/*
+		This is the best method for vertically centering a variable height div.
+		Taken from method 1 at http://blog.themeforest.net/tutorials/vertical-centering-with-css/
+		However, the outer div cannot be set to 100% height, so this is done with JavaScript.
+	*/
+	display:table;
+	width:100%;
+	height:100%;
+	background: rgba(0,255,0,.3);
+	>.centerContentsVertically__inner{
+		display: table-cell;
+		vertical-align: middle;
+		background: rgba(255,0,0,.3);
+	}
+}
+
+#mario-bros .main-stage{
+	background:rgb(13, 13, 13);
+	vertical-align: top;
+	
+	#animationContainer{
+	
+		@include breakpoint(papa-bear) {
+			transform: scale(1.2) !important;
+			-webkit-transform: scale(1.2) !important;
+			-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+			position: absolute;
+			top: 0;
+			left: 130px;
+		}
+		@include breakpoint(mama-bear){/* 960 - 1300 */
+			transform: scale(0.8) !important;
+			-webkit-transform: scale(0.8) !important;
+			-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+			
+		}
+		@include breakpoint(sister-bear){/* 480 - 960 */
+			transform: scale(0.6) !important;
+			-webkit-transform: scale(0.6) !important;
+			-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+		}
+		@include breakpoint(baby-bear){/* < 480 */
+			transform: scale(0.5) !important;
+			-webkit-transform: scale(0.5) !important;
+			-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+			margin: 40px 0 0 0;
+		}
+	
+	}
+}
+
+
+

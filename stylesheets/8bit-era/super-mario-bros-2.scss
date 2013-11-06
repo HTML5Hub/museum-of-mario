@@ -1,0 +1,292 @@
+.fixed{
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+.preload-images{
+	img{
+		width:0px;
+		height:0px;
+	}
+}
+.center-vertically{
+	/*
+		This is the best method for vertically centering a variable height div.
+		Taken from method 1 at http://blog.themeforest.net/tutorials/vertical-centering-with-css/
+		Note that you cannot control the height of the inner element.
+	*/
+	display:table;
+	width:100%;
+	height:100%;
+	/* background: rgba(255,0,0,.3); */ //Debug
+	>.center-vertically__inner{
+		display: table-cell;
+		vertical-align: middle;
+		/* background: rgba(0,0,255,.3); */ //Debug
+	}
+}
+
+.super-mario-bros-2{
+	$babyBearScale:2/3;
+	$sisterBearScale:3/4;
+	display:block !important;//Override display:table.
+	.super-mario-bros-2__art{
+		background: black url(../images/8bit-era/super-mario-bros-2/curtains.png) center top no-repeat;
+		background-size: 100% 100%;
+		position: relative;/* Allow absolute positioning of children. */
+		color:white;
+		width:100%;
+		height:100%;
+		//background: green;//Debug
+		::selection {
+			background: transparent;//Don't show a selection color, so it feels less like a website.
+			}
+		::-moz-selection {
+			background: transparent; /* Firefox */
+		}
+		-webkit-user-select: none;
+		display:block;//Override display:table, so it can fill the space.
+		@include breakpoint(papa-bear){/* 1300+. See bits.scss */
+			
+		}
+		@include breakpoint(mama-bear){/* 960 - 1300 */
+			
+		}
+		@include breakpoint(sister-bear){/* 770px - 960px */
+			
+		}
+		@include breakpoint(baby-bear){/* < 770pbluex */
+			$headerBarHeight:40px;
+			background-position-y: $headerBarHeight;
+			height:70%;//Adjust height as the text area moves to the bottom.
+		}
+		.super-mario-bros-2__main-stage{
+			width:100%;
+			height:100%;
+			//background: rgba(0,0,200,.7);//Debug
+			text-align:center;
+			position: relative;
+			left:30px;//Move away from left curtain a bit.
+			@include breakpoint(papa-bear){/* 1300+. See bits.scss */
+				padding-right:500px;
+				padding-left:100px;
+			}
+			@include breakpoint(mama-bear){/* 960 - 1300 */
+				padding-right:400px;
+			}
+			@include breakpoint(sister-bear){/* 770 - 960 */
+				padding-right:320px;
+			}
+			@include breakpoint(baby-bear){/* < 770 */
+				padding-right:0;
+				left:0;
+			}
+			.select-a-player-area{
+				.please-select-player{
+					display: block;/* Take up its own line. */
+					margin:0 auto;/* Center horizontally. */
+					$w:309px;
+					width:$w;
+					@include breakpoint(sister-bear){/* < 770-960 */
+						width:$w * $sisterBearScale; 
+						margin-top:120px;//Keep from overlapping curtain.
+					}
+					@include breakpoint(baby-bear){/* < 770 */
+						width:$w * $babyBearScale; 
+						margin-top:90px;//Keep from overlapping curtain.
+					}
+				}
+				.arrow{
+					position:absolute;
+					top:0;
+					left:0;
+					$w:48px;
+					width:$w;
+					display:none;/* Set initial state. */
+					@include breakpoint(sister-bear){/* < 768 */
+						width:$w * $sisterBearScale;
+					}
+					@include breakpoint(baby-bear){/* < 768 */
+						width:$w * $babyBearScale;
+					}
+				}
+				.players{
+					text-align: center;
+					margin:0 auto;/* Center horizontally. */
+					cursor:pointer;
+					.player{
+						position: relative;/* Allow children to be absolutely positioned. */
+						display:inline-block;/* Fit them all on one line */
+						$w:48px;
+						$h:93px;
+						$sideMargin:21px;
+						$topMargin:125px;
+						width:$w;
+						height:$h;
+						margin:$topMargin $sideMargin 0;
+						@include breakpoint(sister-bear){/* < 768 */
+							width:$w * $sisterBearScale;
+							height:$h * $sisterBearScale;
+							margin:($topMargin * $sisterBearScale) ($sideMargin * $sisterBearScale) 0;
+						}
+						@include breakpoint(baby-bear){/* < 768 */
+							width:$w * $babyBearScale;
+							height:$h * $babyBearScale;
+							margin:($topMargin * $babyBearScale*.75) ($sideMargin * $babyBearScale) 0;
+						}
+						&[data-name=mario]{
+							background: url(../images/8bit-era/super-mario-bros-2/players/mario--inactive.png) top center no-repeat;
+							background-size:100%;
+							&:hover, &:active{
+								background: url(../images/8bit-era/super-mario-bros-2/players/mario--active.png) top center no-repeat;
+								background-size:100%;
+							}
+						}
+						&[data-name=luigi]{
+							background: url(../images/8bit-era/super-mario-bros-2/players/luigi--inactive.png) top center no-repeat;
+							background-size:100%;
+							&:hover, &:active{
+								background: url(../images/8bit-era/super-mario-bros-2/players/luigi--active.png) top center no-repeat;
+								background-size:100%;
+							}
+						}
+						&[data-name=toad]{
+							background: url(../images/8bit-era/super-mario-bros-2/players/toad--inactive.png) top center no-repeat;
+							background-size:100%;
+							&:hover, &:active{
+								background: url(../images/8bit-era/super-mario-bros-2/players/toad--active.png) top center no-repeat;
+								background-size:100%;
+							}
+						}
+						&[data-name=princess]{
+							background: url(../images/8bit-era/super-mario-bros-2/players/princess--inactive.png) top center no-repeat;
+							background-size:100%;
+							&:hover, &:active{
+								background: url(../images/8bit-era/super-mario-bros-2/players/princess--active.png) top center no-repeat;
+								background-size:100%;
+							}
+						}
+					}
+				}
+			}
+			.player-bio-modal{
+				display:none;/* Set initial state. */
+				//display:block;//Debug
+				.player-bio-modal__inner{
+					background: url(../images/8bit-era/super-mario-bros-2/frame.png) top center no-repeat;
+					background-size:100%;
+					position: relative;
+					$sidePadding: 80px;
+					$w:568px;
+					$h:516px;
+					width:$w - $sidePadding;
+					padding:0 $sidePadding;
+					margin:0 auto;/* Center horizontally. */
+					width:$w;
+					height:$h;
+					//text-transform: uppercase;
+					@include breakpoint(papa-bear){/* 1300+. See bits.scss */
+						
+					}
+					@include breakpoint(mama-bear){/* 960 - 1300 */
+						
+					}
+					@include breakpoint(sister-bear){/* 770 - 960 */
+						width:$w * $sisterBearScale - $sidePadding * $sisterBearScale;
+						height:$h * $sisterBearScale;
+						padding:0 $sidePadding * $sisterBearScale;
+					}
+					@include breakpoint(baby-bear){/* < 770 */
+						width:$w * $babyBearScale - $sidePadding * $babyBearScale;
+						height:$h * $babyBearScale;
+						padding:0 $sidePadding * $babyBearScale;
+						position: relative;
+						top:50px;//Move down to accommodate for the mobile header bar.
+					}
+					.player-bio{
+						display: none;
+						.title{
+							text-align:center;
+							$fontSize:28px;
+							font-size:$fontSize;
+							$paddingTop:100px;
+							$paddingBottom:70px;
+							padding: $paddingTop 0 $paddingBottom;
+							@include breakpoint(sister-bear){/* 770 - 960 */
+								font-size:$fontSize * $sisterBearScale;
+								padding: ($paddingTop * $sisterBearScale) 0 ($paddingBottom * $sisterBearScale);
+							}
+							@include breakpoint(baby-bear){/* < 770 */
+								font-size:$fontSize * $babyBearScale;
+								padding: ($paddingTop * $babyBearScale) 0 ($paddingBottom * $babyBearScale);
+							}
+						}
+						.row2{
+							margin:0 auto;
+							.player-image{
+								float:left;
+								$w:64px;
+								width:$w;
+								position: relative;
+								top:-10px;//16px;
+								@include breakpoint(baby-bear){/* < 770 */
+									width:$w * $sisterBearScale;
+									position: relative;
+									top:0;//16px;
+								}
+								@include breakpoint(baby-bear){/* < 770 */
+									width:$w * $babyBearScale;
+									position: relative;
+									top:0;//24px;
+								}
+							}
+							.player-bio-text{
+								float:right;
+								width:70%;
+								$fontSize:18px;
+								font-size:$fontSize;
+								@include breakpoint(sister-bear){/* < 770 */
+									font-size:$fontSize * $sisterBearScale;
+									line-height: 1.2em;
+								}
+								@include breakpoint(baby-bear){/* < 770 */
+									font-size:$fontSize * $babyBearScale;
+									line-height: 1.2em;
+								}
+							}
+						}
+						&[data-name=mario]{
+							display:block;
+						}
+						&[data-name=luigi]{
+							
+						}
+						&[data-name=toad]{
+							
+						}
+						&[data-name=princess]{
+							
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@include breakpoint(papa-bear){/* 1300+. See bits.scss */
+	
+}
+@include breakpoint(mama-bear){/* 960 - 1300 */
+	
+}
+@include breakpoint(sister-bear){/* 770 - 960 */
+	
+}
+@include breakpoint(baby-bear){/* < 770 */
+	
+}
+

@@ -1,0 +1,461 @@
+
+
+
+{$define "#page"}
+<!DOCTYPE html>
+<!--[if lt IE 7]>	<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>		<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>		<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>	<!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	{$partial "#head" $}
+</head>
+<body>
+
+    {$partial "#fb_sdk" $}
+    {$partial "#ign_adkit" $}
+
+	<div class="wrapper">
+
+		{$partial "#header" $}
+
+		{$partial "#mainnav" $}
+
+        {$partial "#icon-dock" $}
+
+		<div class="main-content">
+
+			{$partial "#contest" $}
+
+            {$partial "#article-wrapper" $}
+
+			{$partial "#pagecontent" $}
+
+			{$partial "#twitterfeed" $}
+
+			{$partial "#influencer" $}
+
+		</div>
+	</div>
+
+    <script src="{$insert $.bootstrapper $}"></script>
+    {$partial "#comscore" $}
+    {$partial "#insidesocial" $}
+</body>
+</html>
+{$}
+
+{$define "#head" }
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>{$insert $.title $}</title>
+
+    <!-- CORE META DATA -->
+    <meta name="author" content="Intel's HTML5Hub in association with IGN">
+    <meta name="description" content="Share your favorite #MarioMemories in an interactive experience feat. Nintendo's legendary Mario. Built by Intel's HTML5Hub in collaboration with IGN.">
+    <meta name="keywords" content="IGN, museum of mario, mario, super mario, super mario bros, Nintendo">
+
+    <!-- BEHAVIORIAL META DATA -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- FB OPEN GRAPH META DATA -->
+    <meta property="fb:app_id" content="420185404747967"/>
+    <meta property="og:url" content="http://mario.ign.com"/>
+    <meta property="og:title" content="IGN presents The Museum of Mario"/>
+    <meta property="og:site_name" content="IGN"/>
+    <meta property="og:description" content="Share your favorite #MarioMemories in an interactive experience feat. Nintendo's legendary Mario. Built by Intel's HTML5Hub in collaboration with IGN."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="http://html5hub.com/social/ign/images/IGN_Museum_of_Mario_250x250.png"/>
+    <meta property="og:locale" content="en_us"/>
+
+    <!-- TWITTER CARD META DATA -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@IGN"/>
+    <meta name="twitter:title" content="IGN presents The Museum of Mario"/>
+    <meta name="twitter:description" content="Share your favorite #MarioMemories in an interactive experience feat. Nintendo's legendary Mario. Built by Intel's HTML5Hub in collaboration with IGN."/>
+    <meta name="twitter:image:src" content="http://html5hub.com/social/ign/images/IGN_Museum_of_Mario_500x300.jpg"/>
+
+    <!-- IGN ADKIT -->
+    <script type="text/javascript" src="http://oystatic.ignimgs.com/src/core/js/gpt-ign.js"></script>
+    <script type="text/javascript" src="http://oystatic.ignimgs.com/src/core/js/sugarads.js"></script>
+    <link rel="stylesheet" href="http://oystatic.ignimgs.com/src/core/css/default/sugarads.css" type="text/css" />
+
+    <!-- IGN AD TARGETING DATA -->
+    <script>
+        SugarAds.adsData = {"adsDisabled":"false","dfp_network":"5691","dfp_adunit1":"IGN","resource":"ps3","pagetype":"channel","tags":["museum-of-mario"],"object1_id":[112718, 99437, 127315, 135584, 14354229],"platforms":[],"zdid":"1234a567"};
+        SugarAds.renderAds(["prestitial"]);
+    </script>
+
+    <!-- RESOURCES -->
+	<link rel="stylesheet" href="/master.css"/>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
+    <script type="text/javascript" src="http://fast.fonts.net/jsapi/df81f17c-c672-482c-baab-e50c1c21f387.js"></script>
+	<script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+
+    <!--[if lt IE 8]>
+        <aside id="browsehappy">
+            <p><strong>HOLY YOSHIS!</strong> You're using an <strong>outdated</strong> browser. Go to <a href="http://browsehappy.com/" data-ignore="yes" target="_blank">Browse Happy to update</a> and experience all the Mario magic.</p>
+        </aside>
+    <![endif]-->
+
+{$}
+
+{$define "#fb_sdk"}
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        // init the FB JS SDK
+        FB.init({
+          appId: '420185404747967',
+        });
+      };
+
+      // Load the SDK asynchronously
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+{$}
+
+{$define "#ign_adkit"}
+    <div id="sugarad-1x1">
+        <script type='text/javascript'> googletag.cmd.push(function() { googletag.display('sugarad-1x1');});</script>
+    </div>
+
+    <div id="stitialV2">
+        <div id="stitialV2-navigation-block" onclick="SugarAds.dfp._stitialClose()">
+            <div id="stitialV2-welcomeLink">
+                <a>
+                    <span style="font-weight:bold;"></span>
+                    <span></span>
+                </a>
+                <img src="http://ads.ign.com/stitial2.0/arrow.2x.png">
+            </div>
+        </div>
+
+        <div id="stitialV2-fuse">
+            <span id="stitialV2-fuseWire"></span>
+        </div>
+
+        <div id="stitialV2-overlay">
+            <div id="stitialV2-close" onclick="SugarAds.dfp._stitialClose()">x</div>
+        </div>
+
+        <div id="stitialV2-wrapper">
+            <div id="stitialV2-creative"></div>
+        </div>
+    </div>
+{$}
+
+{$define "#comscore"}
+    <!-- Begin comScore Tag -->
+    <script> var _comscore = _comscore || []; _comscore.push({ c1: "2", c2: "3000068" }); (function() { var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true; s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js"; el.parentNode.insertBefore(s, el); })(); </script> <noscript> <img src="http://b.scorecardresearch.com/p?c1=2&c2=3000068&cv=2.0&cj=1" /> </noscript>
+    <!-- End comScore Tag -->
+{$}
+
+{$define "#insidesocial"}
+    <script id="is-tracker" type="text/javascript" src="//cdn1.insidesoci.al/static/js/banyan/ign.min.js#bfb319deda5861a8495aea5f7e5f2fc2382e1b91"></script>
+{$}
+
+
+{$define "#header" }
+	<nav id="mobile-dock-top">
+		<ul>
+			<li class="dock-top">
+                <div class="left">
+				    <a href="#" id="mobile-nav-toggle" class="btn"><i class="icon-reorder"></i></a>
+                </div>
+
+                <a id="ign-logo" href="http://ign.com" target="_blank" data-ignore="yes"><img id="logo-ign" src="/images/logo-ign.png" alt="IGN" /></a>
+
+                <div class="right">
+				    <a id="refresh-animation" href='#' class="btn btn-control"><i class="icon-refresh"></i></a>
+                    <a id="audio-control-1" href="#" class="btn btn-control"><i class="icon-microphone-off"></i></a>
+                </div>
+			</li>
+		</ul>
+	</nav>
+	<div class="mobile-mask"></div>
+{$}
+
+
+{$define "#mainnav" }
+	<nav id="global-nav" class="fadeInLeft animated" data-native-scrollable="yes">
+        <ul data-native-scrollable="yes">
+            <li class="dock-top">
+                <a href="http://ign.com" class="solid" target="_blank" data-ignore="yes" data-track="yes" data-cat="Head" data-label="Home"><img id="logo-ign" src="/images/logo-ign.png" alt="IGN" /></a>
+            </li>
+
+            <li class="era-link">
+                <a href="/" data-track="yes" data-cat="Head" data-label="Start">
+                    <span class="era-name everpresent">Start</span>
+                    <span class="era-icon-bg"><span id="start-icon" class="era-icon"></span></span>
+                </a>
+            </li>
+
+            <li class="era-link">
+                <a href="/arcade-era/donkey-kong" data-track="yes" data-cat="Era" data-label="Arcade">
+                    <span class="era-icon-bg"><span id="arcade-era-icon" class="era-icon"></span></span>
+                    <span class="era-name">Arcade Era</span>
+                </a>
+                <ul class="era-nav">
+                    <li><a href="/arcade-era/donkey-kong" data-track="yes" data-cat="Arcade" data-label="Donkey Kong"><i class="icon-circle"></i></a></li>
+                    <li><a href="/arcade-era/mario-bros" data-track="yes" data-cat="Arcade" data-label="Mario Bros"><i class="icon-circle"></i></a></li>
+                </ul>
+            </li>
+
+            <li class="era-link">
+                <a href="/8bit-era/super-mario-bros" data-track="yes" data-cat="Era" data-label="8bit">
+                    <span class="era-icon-bg"><span id="eightbit-era-icon" class="era-icon"></span></span>
+                    <span class="era-name">8 Bit Era</span>
+                </a>
+                <ul class="era-nav">
+                    <li><a href="/8bit-era/super-mario-bros" data-track="yes" data-cat="8bit" data-label="Super Mario Bros"><i class="icon-circle"></i></a></li>
+                    <li><a href="/8bit-era/super-mario-bros-2" data-track="yes" data-cat="8bit" data-label="Super Mario Bros 2"><i class="icon-circle"></i></a></li>
+                    <li><a href="/8bit-era/super-mario-bros-3" data-track="yes" data-cat="8bit" data-label="Super Mario Bros 3"><i class="icon-circle"></i></a></li>
+                    <li><a href="/8bit-era/handhelds" data-track="yes" data-cat="8bit" data-label="Handhelds"><i class="icon-circle"></i></a></li>
+                </ul>
+            </li>
+
+            <li class="era-link">
+                <a href="/16bit-era/super-mario-world" data-track="yes" data-cat="Ero" data-label="16bit">
+                    <span class="era-icon-bg"><span id="sixteenbit-era-icon" class="era-icon"></span></span>
+                    <span class="era-name">16 Bit Era</span>
+                </a>
+                <ul class="era-nav">
+                    <li><a href="/16bit-era/super-mario-world" data-track="yes" data-cat="16bit" data-label="Super Mario World"><i class="icon-circle"></i></a></li>
+                    <li><a href="/16bit-era/yoshis-island" data-track="yes" data-cat="16bit" data-label="Yoshis Island"><i class="icon-circle"></i></a></li>
+                    <li><a href="/16bit-era/super-mario-kart" data-track="yes" data-cat="16bit" data-label="Super Mario Kart"><i class="icon-circle"></i></a></li>
+                </ul>
+            </li>
+
+            <li class="era-link">
+                <a href="/3D-era/super-mario-64" data-track="yes" data-cat="Era" data-label="3D">
+                    <span class="era-icon-bg"><span id="threeD-era-icon" class="era-icon"></span></span>
+                    <span class="era-name">3D Era</span>
+                </a>
+                <ul class="era-nav">
+                    <li><a href="/3D-era/super-mario-64" data-track="yes" data-cat="3D" data-label="Super Mario 64"><i class="icon-circle"></i></a></li>
+                    <li><a href="/3D-era/super-mario-sunshine" data-track="yes" data-cat="3D" data-label="Mario Sunshine"><i class="icon-circle"></i></a></li>
+                    <li><a href="/3D-era/super-smash-bros" data-track="yes" data-cat="3D" data-label="Super Smash Bros"><i class="icon-circle"></i></a></li>
+                    <li><a href="/3D-era/super-mario-galaxy" data-track="yes" data-cat="3D" data-label="Super Mario Galaxy"><i class="icon-circle"></i></a></li>
+                </ul>
+            </li>
+
+            <li class="era-link">
+                <a href="/modern-era/super-mario-bros-Wii&amp;WiiU" data-track="yes" data-cat="Era" data-label="Modern">
+                    <span class="era-icon-bg"><span id="modern-era-icon" class="era-icon"></span></span>
+                    <span class="era-name">Modern Era</span>
+                </a>
+                <ul class="era-nav">
+                    <li><a href="/modern-era/super-mario-bros-Wii&amp;WiiU" data-track="yes" data-cat="Modern" data-label="Super Mario Bros Wii"><i class="icon-circle"></i></a></li>
+                    <li><a href="/modern-era/super-mario-3D-world" data-track="yes" data-cat="Modern" data-label="Super Mario 3d World"><i class="icon-circle"></i></a></li>
+                </ul>
+            </li>
+
+            <li class="era-link">
+                <a href="/finish" data-track="yes" data-cat="Head" data-label="Finish">
+                    <span class="era-icon-bg"><span id="finish-icon" class="era-icon"></span></span>
+                    <span class="era-name everpresent">Finish</span>
+                </a>
+            </li>
+
+            <li class="era-link mobile-only">
+                <ul id="share-links">
+                    <li><span class="era-name">Share</span></li>
+                    <li><a href="#"><i class="icon-twitter-sign"></i></a></li>
+                    <li><a href="#"><i class="icon-facebook-sign"></i></a></li>
+                    <li><a href="#"><i class="icon-google-plus-sign"></i></a></li>
+                </ul>
+            </li>
+
+            <li class="dock-bottom">
+                <a href="#" class="html5-influencer-toggle" data-track="yes" data-cat="HTML5" data-label="Learn">
+                    <i class="icon-html5"></i>
+                    <span>Built by the HTML5 Hub</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+{$}
+
+
+{$define "#contest" }
+    <a id="twitter-bug" href="#" class="btn btn-red twitter-feed-toggle"><i class="icon-twitter"></i> Share Your #MarioMemories</a>
+{$}
+
+{$define "#article-wrapper" }
+    <div class="article-wrapper">
+        <div id="gradient-mask" class="mobile-only"></div>
+
+        <article class="game-block" data-native-scrollable="yes">
+            <div id="loading" class="cloak"></div>
+            <div class="game-block-inner">
+                <a href="#" id="mobile-fullscreen-toggle"><i class="icon-chevron-up"></i></a>
+                {$partial "#game-copy" $}
+            </div>
+        </article>
+
+        <aside id="mobile-off-canvas-icons">
+            <ul>
+                <li>
+                    <a href="#" class="twitter-feed-toggle"><i class="icon-twitter"></i> Share Your #MarioMemories</a>
+                </li>
+                <li>
+                    <a href ="#" class="html5-influencer-toggle"><i class="icon-html5"></i></a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+{$}
+
+{$define "#pagecontent" }
+    <div id="pages_container">
+        <section id="before_content" class="before_content"></section>
+        <div id="before_gutter"></div>
+        {$partial "#content" $}
+        <div id="after_gutter"></div>
+        <section id="after_content" class="after_content"></section>
+    </div>
+{$}
+
+
+{$define "#content" }<section id="content"></section>{$}
+
+
+{$define "#twitterfeed" }
+	<section id="twitter-feed-block" class="off-canvas row">
+        <a href="#" class="twitter-feed-toggle btn btn-close">&times;</a>
+
+        <div id="twitter-mm-block" class="col-lg-4" data-native-scrollable="yes">
+            <h1 class="post-contest-title">
+                Share your #mariomemories
+            </h1>
+
+            <div id="twitter-mm-composer" class="tweet-composer">
+                <textarea placeholder="#html5hub #mariomemories mario.ign.com"
+                    class="js-tweet-composer"
+                    rows="8"
+                    data-default=" #html5hub #mariomemories mario.ign.com"
+                    data-url=""></textarea>
+                <span id="chars-count" class="js-tweet-counter">
+                    140
+                </span>
+                <a class="btn btn-red tweet-composer__btn js-tweet-btn"
+                    href="#"
+                    data-track="yes" data-cat="Shared" data-label="TW">
+                    <i class="icon-twitter"></i> Tweet this!
+                </a>
+            </div>
+
+            <p>
+                Need more room? Post via
+                <!-- <a href="#" data-url="http://mario-unstable.herokuapp.com" class="plus-share" data-ignore="yes">Google+</a> -->
+
+                <span class="g-interactivepost fake-link"
+                      data-contenturl="http://mario.ign.com"
+                      data-clientid="280680440569.apps.googleusercontent.com"
+                      data-cookiepolicy="none"
+                      data-prefilltext="#html5hub #mariomemories"
+                      data-calltoactionlabel="VISIT"
+                      data-calltoactionurl="http://mario.ign.com">Google+</span>
+                or
+                <a href="#" class="facebook-share" data-ignore="yes">Facebook</a>
+            </p>
+
+        </div>
+
+        <div id="twitter-feedFeatured-block" class="col-lg-4">
+            <h5 class="twitter-feed-title">FEATURED TWEETS</h5>
+            <ul class="js-featured-tweets tweet-list flip" data-native-scrollable="yes"></ul>
+        </div>
+
+        <div id="twitter-feedAll-block" class="col-lg-4">
+            <h5 class="twitter-feed-title">ALL TWEETS</h5>
+            <ul class="js-all-tweets tweet-list flip" data-native-scrollable="yes"></ul>
+        </div>
+    </section>
+{$}
+
+
+{$define "#influencer" }
+	<section id="html5-influencer-block" class="off-canvas" data-native-scrollable="yes">
+        <a href="#" class="html5-influencer-toggle btn btn-close">&times;</a>
+
+        <p class="subhead">
+            <img id="HTML5hub-logo" src="/images/logo-hub.png" width="110" height="106" alt="HTML5Hub" />
+            This article experience was built by developers at the HTML5 Hub<br />
+            <a href="http://html5hub.com" data-ignore="yes" target="_blank" class="btn btn-orange" data-track="yes" data-cat="HTML5" data-label="Learn">For more visit <strong>HTML5Hub.com</strong></a>
+        </p>
+
+        <a href="http://html5hub.com/project/ign" data-ignore="yes" target="_blank" id="video-poster" data-track="yes" data-cat="HTML5" data-label="Kyle">
+            <img src="/images/kyle-simpson-poster.jpg" width="420" alt="Featured Developer Kyle Simpson" />
+        </a>
+
+        <p><strong>Kyle Simpson</strong> is an Open Web Evangelist from Austin, TX. He's passionate about JavaScript, HTML5, real-time/peer-to-peer communications, and web performance. Kyle is an author, workshop trainer, technology speaker, and avid OSS community member.</p>
+
+        <h5>TOOLS</h5>
+        <p>grips templating, LABjs, node.js, socket.io, jQuery, Three.js</p>
+    </section>
+{$}
+
+
+{$define "#icon-dock" }
+    <div id="icon-dock-wrapper">
+        <nav id="icon-dock">
+            <a href="#" id="refresh-icon"><i class="control icon-refresh"></i></a>
+            <a href="#" id="audio-control-2"><i class="control icon-microphone-off"></i></a>
+            <a href="#" id="share-toggle"><i class="icon-plus"></i> <span>Share</span></a>
+            <a href="#" data-ignore="yes"
+                class="facebook-share"
+                data-name="IGN presents The Museum of Mario"
+                data-link="http://mario.ign.com"
+                data-picture="http://html5hub.com/social/ign/images/IGN_Museum_of_Mario_250x250.png"
+                data-description="Share your favorite #MarioMemories in an interactive experience feat. Nintendo's legendary Mario.  Built by Intel's HTML5Hub in collaboration with IGN."
+                data-track="yes" data-cat="Head" data-label="FB">
+                <i class="icon-facebook"></i>
+            </a>
+
+            <a href="http://twitter.com/intent/tweet?url=http%3A%2F%2Fmario.ign.com&text=The%20Museum%20of%20Mario:%20interactive%20experience%20from%20@IGN%20%26%20%23HTML5Hub"
+                id="twitter-share-button"
+                target="_blank"
+                data-ignore="yes"
+                data-track="yes" data-cat="Head" data-label="TW">
+                <i class="icon-twitter"></i>
+            </a>
+
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+            <!-- <a href="https://plus.google.com/+IGN/posts" target="_blank"><i class="icon-google-plus"></i></span></a> -->
+
+            <span class="g-interactivepost fake-link"
+                      data-contenturl="http://mario.ign.com"
+                      data-clientid="280680440569.apps.googleusercontent.com"
+                      data-cookiepolicy="none"
+                      data-prefilltext="#html5hub #mariomemories"
+                      data-calltoactionlabel="VISIT"
+                      data-calltoactionurl="http://mario.ign.com"
+                      data-track="yes" data-cat="Head" data-label="GP"><i class="icon-google-plus"></i></span>
+
+            <!--
+            <script type="text/javascript">
+              (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+            </script>
+            -->
+        </nav>
+    </div>
+{$}
+
+
+{$define "#game-copy" }{$}
+
+

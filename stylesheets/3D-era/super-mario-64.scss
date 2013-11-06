@@ -1,0 +1,83 @@
+#super-mario-64 {
+
+	.mario-64-scene-wrapper {
+		position:absolute; top:0;
+		width:100%; height:100%;
+		@include breakpoint(baby-bear){/* < 770pbluex */
+			text-align:center;
+			padding-right:0;	
+		}
+	}
+
+
+	.mario-64-scene {
+		position:absolute; top:0;
+		width:100%; height:100%;
+		z-index:2;
+		background:#af1919 url(../images/3D-era/super-mario-64/scene@768.jpg) no-repeat 50% 50%;
+		background-size:cover;
+
+		@include breakpoint(papa-bear){/* 1300+. See bits.scss */
+			background-image: url(../images/3D-era/super-mario-64/scene-offset@768.jpg);
+			background-position: 100% 50%;
+		}
+		@include breakpoint(mama-bear){/* 960 - 1300 */
+			background-image: url(../images/3D-era/super-mario-64/scene-offset@768.jpg);
+			background-position: 50% 50%;
+		}
+		@include breakpoint(sister-bear){/* 770px - 960px */
+			background-image: url(../images/3D-era/super-mario-64/scene-offset@768.jpg);
+			background-position: 50% 50%;
+		}
+		@include breakpoint(atomic-bear){/* < 480px */
+			background-image: url(../images/3D-era/super-mario-64/scene@320.jpg);
+			background-position: 50% 50%;
+		}
+	}
+
+	// Scene Canvas
+	.mario-64-hero {
+		position:absolute; top:10%;
+		width:450px; height:575px;
+		margin-left:-225px;
+		background-size:contain;
+	//	border:3px dotted #FF00FF;
+		z-index:3;
+
+		@include breakpoint(papa-bear){/* 1300+. See bits.scss */
+		//	left:40%;
+		}
+		@include breakpoint(mama-bear){/* 960 - 1300 */
+		//	left:40%;
+		}
+		@include breakpoint(sister-bear){/* 770px - 960px */
+		//	left:40%;
+		}
+		@include breakpoint(baby-bear){/* < 770pbluex */
+			//left:50%; 
+		}
+	}
+
+	.mario-64-frame {
+		position:absolute; top:0; left:0;
+		width:100%; height:400px;
+		background:transparent url(../images/3D-era/super-mario-64/frame.png) 50% 0 no-repeat;
+		background-size:cover;
+		pointer-events:none;
+	}
+
+	#mario-64-canvas {
+		position:absolute; top:0; left:0;
+		background:rgba(0,0,0,0.5);
+	}
+
+	.mario-64 {
+		position:absolute; bottom:0; left:0;
+		width:225px; height:225px;
+	//	width:50%; height:50%; margin-left:-25%;
+		z-index:4; 
+		background:transparent url(../images/3D-era/super-mario-64/mario-breathing.png) no-repeat 0 0;
+		background-size:cover;
+	}
+
+}

@@ -1,0 +1,454 @@
+#twitter-block {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: red;
+	padding: 0 15px;
+	line-height: 40px;
+	color: #fff;
+	font-weight: bold;
+}
+
+//------------------------------------------------------ GAME BLOCK
+
+.game-block {
+	position: relative;
+	display: table-cell;
+	vertical-align: middle;
+	right: 0;
+
+	h1 {
+		font-size: 32px;
+		line-height: 32px;
+		margin: 10px 0 10px 0;
+
+		@include breakpoint(mama-bear) {
+			font-size: 24px;
+			line-height: 28px;
+		}
+	}
+
+	.game-block-inner {
+		background: whiteSmoke;
+		padding: 40px;
+
+		-webkit-transition-property: color, all;
+		-moz-transition-property: color, all;
+		transition-property: color, all;
+
+		-webkit-transition-duration: 400ms, 300ms;
+		-moz-transition-duration: 400ms, 300ms;
+		transition-duration: 400ms, 300ms;
+
+		& h1 {
+			-webkit-transition: color 400ms;
+			-moz-transition: color 400ms;
+			transition: color 400ms;
+		}
+		&.fade-out, &.fade-out h1 {
+			color: rgba(255,255,255,0);
+		}
+
+		@include breakpoint(sister-bear) {
+			padding: 30px;
+		}
+
+		@include breakpoint(baby-bear) {
+			background: #fff;
+			padding: 10px 20px;
+		}
+
+	}
+
+	@include breakpoint(mama-bear) {
+		width: 450px;
+
+		.game-block-inner {
+			padding: 30px;
+		}
+	}
+
+	@include breakpoint(sister-bear) {
+		.game-block-inner {
+			padding: 30px;
+		}
+		h1 {
+			font-size: 22px;
+			margin: 5px 0;
+		}
+
+		p, ul li {
+			font-size: 12px;
+			line-height: 16px;
+		}
+	}
+
+	@include breakpoint(baby-bear) {
+		display: block;
+
+		h1 {
+			font-size: 18px;
+			line-height: 18px;
+			margin: 5px 0 10px 0;
+		}
+
+		.game-date {color: #888;}
+
+		&.open {
+			top: 0;
+		}
+	}
+}
+
+#html5-influencer-block,
+#twitter-feed-block  {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	height: 100%;
+	background-color: rgba(0,0,0,0.9);
+	color: #fff;
+	padding: 40px;
+	@include transitionFast;
+
+	.btn-close {
+		position: absolute;
+		z-index: 1;
+		color: #fff;
+		top: 15px;
+		right: 10px;
+		font-size: 28px;
+		background: transparent;
+
+		@include breakpoint(baby-bear) {
+			top: 8px;
+		}
+	}
+
+	@include breakpoint(baby-bear) {
+		padding: 10px 20px 60px;
+	}
+
+	&.open {
+		right: 0;
+		z-index: 10;
+		overflow-y: auto;
+		@include breakpoint(baby-bear) {
+			padding-bottom: 60px;
+		}
+	}
+
+	.subhead {
+		@include large-p;
+		color: #fff;
+		.sub-block {
+			display: block;
+			@include medium-p;
+		}
+	}
+
+	iframe {margin-bottom: 10px;}
+	.caption {
+		margin-bottom: 30px;
+		strong {
+			color: #fff;
+		}
+	}
+
+	p {
+		color: #888;
+	}
+
+	@include breakpoint(mama-bear) {
+		width: 555px;
+		padding-bottom: 100px;
+		overflow-y: auto;
+	}
+
+	@include breakpoint(baby-bear) {
+		width: 100%;
+		right: -100%;
+		margin-top: 40px;
+		padding: 20px;
+		p {@include medium-p;}
+	}
+}
+
+#loading {
+	display: none;
+	position: absolute;
+	height: 5px;
+	background-color: $red;
+	width: 100%;
+	@include transitionMedium;
+
+	-webkit-animation: loadbar 3000ms ease-in 1;
+}
+
+@-webkit-keyframes loadbar {
+	from {width: 0;}
+	to {width: 100%;}
+}
+
+#twitter-feed-block {
+	right: -100%;
+	width: 100%;
+	padding: 0 0 0 100px;
+	color: #fff;
+	margin: 0;
+
+	@include breakpoint(mama-bear) {padding-left: 80px;}
+	@include breakpoint(sister-bear) {padding-left: 80px;}
+
+	@include breakpoint(baby-bear) {
+		width: 100%;
+		right: -100%;
+		margin-top: 40px;
+		padding: 0;
+		&.open {padding-bottom: 30px;}
+	}
+
+	h5 {margin-bottom: 20px;}
+	h1, p {
+		color: #fff;
+	}
+	h1 {
+		@include breakpoint(mama-bear) {
+			font-size: 26px;
+			line-height: 28px;
+		}
+		@include breakpoint(sister-bear) {
+			font-size: 18px;
+			line-height: 22px;
+		}
+		@include breakpoint(baby-bear) {
+			font-size: 24px;
+			line-height: 28px;
+		}
+	}
+
+	#twitter-mm-block,
+	#twitter-feedFeatured-block,
+	#twitter-feedAll-block {
+		padding: 40px;
+		height: 100%;
+		overflow-y: auto;
+
+		@include breakpoint(mama-bear) {
+			width: 33.33333%;
+			float: left;
+			padding: 20px;
+		}
+
+		@include breakpoint(sister-bear) {
+			width: 33.33333%;
+			float: left;
+			padding: 10px 20px;
+		}
+
+		@include breakpoint(baby-bear) {
+			padding: 15px 20px;
+			height: auto;
+			overflow: hidden;
+		}
+	}
+
+	#twitter-mm-block {
+		p {
+			@include medium-p;
+			font-family: $proxima-nova-bold;
+			@include breakpoint(sister-bear) {
+				@include small-p;
+			}
+			@include breakpoint(baby-bear) {
+				@include small-p;
+			}
+			&.lite {
+				@include small-p;
+				font-family: $proxima-nova;
+			}
+		}
+
+		.post-contest-title {
+			margin: 0 0 60px;
+
+			@include breakpoint(mama-bear) {
+				margin: 0 0 30px 0;
+			}
+
+			@include breakpoint(sister-bear) {
+				margin: 0 0 20px 0;
+			}
+
+			@include breakpoint(baby-bear) {
+				margin: 0 0 20px 0;
+			}
+		}
+
+		background-color: $red;
+
+		img {
+			width: 100px;
+			height: 100px;
+			position: relative;
+			top: -20px;
+			margin-right: 30px;
+			float: left;
+
+			@include breakpoint(mama-bear) {
+				width: 80px;
+				height: 80px;
+				top: -15px;
+				margin-right: 15px;
+			}
+			@include breakpoint(sister-bear) {
+				display: none;
+			}
+
+			@include breakpoint(baby-bear) {
+				display: none;
+			}
+		}
+		.tweet-composer {
+			position: relative;
+
+			.tweet-composer__btn {
+				position: absolute;
+				bottom: 40px;
+				left: 20px;
+				border: 0;
+			}
+
+			#chars-count {
+				position: absolute;
+				right: 20px;
+				bottom: 45px;
+				color: #aeaeae;
+				font-family: $proxima-nova-bold;
+
+				&.chars-count--red {
+					color: #ff0000;
+				}
+			}
+
+			@include breakpoint(sister-bear) {
+				textarea {padding: 10px;}
+				button {
+					bottom: 30px;
+					left: 10px;
+				}
+				#chars-count {
+					right: 10px;
+					bottom: 26px;
+				}
+			}
+		}
+
+		a,
+		.fake-link {
+			cursor: pointer;
+			color: #fff;
+			font-weight: normal;
+			border-bottom: 1px dotted currentColor;
+			padding-bottom: 1px;
+			&:hover {
+				border-bottom: 1px solid #fff;
+			}
+		}
+	}
+	#twitter-feedFeatured-block {
+		background-color: #171717;
+		p {@include medium-p;}
+	}
+	#twitter-feedAll-block {
+		background-color: #272727;
+		p {@include medium-p;}
+	}
+}
+
+#html5-influencer-block {
+	position: relative;
+	width: 500px;
+	left: -500px;
+	margin: 0;
+	padding: 60px 40px 40px 40px;
+	background-color: #272727;
+	background-image: url(/images/blue-texture.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+
+	.subhead {
+		font-size: 18px;
+		line-height: 24px;
+		margin-bottom: 40px;
+		.btn {margin-top: 20px;}
+	}
+
+	#video-poster {
+		position: relative;
+		display: block;
+		max-width: 100%;
+		margin-bottom: 30px;
+	}
+
+	h1 {
+		color: #fff;
+		margin: 0 0 20px 0;
+	}
+
+	p {margin-bottom: 20px;}
+	strong {color: #fff;}
+
+	#HTML5hub-logo {
+		float: right;
+		width: auto;
+	}
+
+	&.open {
+		left: 100px;
+		z-index: 20;
+		@include breakpoint(mama-bear) {left: 80px;}
+		@include breakpoint(sister-bear) {left: 80px;}
+		@include breakpoint(baby-bear) {
+			left: 0;
+			margin: 0;
+			padding: 40px 20px 20px 20px;
+		}
+	}
+
+	@include breakpoint(baby-bear) {
+		width: 100%;
+		left: -100%;
+	}
+}
+
+// OVERIDES
+
+body.start, body.finish {
+	.game-block-inner {display: none;}
+}
+
+#browsehappy {
+	display: block;
+	text-align: center;
+	background-color: #7BCC00;
+	color: #fff;
+	height: 40px;
+	line-height: 40px;
+
+	p {margin: 0;}
+
+	a {
+		color: #fff;
+		border-bottom: 1px dotted #fff;
+		padding-bottom: 2px;
+		font-family: $proxima-nova-bold;
+
+		&:hover {
+			border-bottom: 1px solid #fff;
+		}
+	}
+}
+
+
+

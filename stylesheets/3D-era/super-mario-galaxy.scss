@@ -1,0 +1,295 @@
+#super-mario-galaxy {
+	background: #012b55;
+	
+	* {
+		animation-play-state:paused;
+		-webkit-animation-play-state:paused;
+		-moz-animation-play-state:paused;
+		-o-animation-play-state:paused;
+	}
+	
+	.animated{
+		animation-play-state:running;
+		-webkit-animation-play-state:running;
+		-moz-animation-play-state:running;
+		-o-animation-play-state:running;
+	}
+
+	#galaxy-scene {
+		margin: 10% 100px;
+		width: 100%;
+		height: 1000px;
+		position: relative;
+
+		@include breakpoint(mama-bear) {
+			margin: 10% 0;
+		}
+
+		@include breakpoint(baby-bear) {
+			width: 480px;
+			margin: 0 auto;
+		}
+
+		#galaxy-bg {
+			background: url(/images/3D-era/super-mario-galaxy/galaxy-bg.jpg) no-repeat;
+			background-position: -400px -300px;
+			background-size: cover;
+			position: absolute;
+			width: 2600px;
+			height: 1600px;
+			left: -450px;
+			top: -620px;
+
+			@include breakpoint(mama-bear) {
+				top: -420px;
+			}
+
+			@include breakpoint(baby-bear) {
+				width: 1000px;
+				left: -360px;
+				top: -300px;
+			}
+		}
+		#galaxy-mario {
+			background: url(/images/3D-era/super-mario-galaxy/mario.png) no-repeat 50% 100%;
+			background-size: 100%;
+			position: absolute;
+			z-index: 5;
+			width: 600px;
+			height: 600px;
+			top: 0;
+			left: 200px;
+			-webkit-transform:	rotate(10deg);
+			-moz-transform: 	rotate(10deg);
+			-o-transform: 		rotate(10deg);
+			transform: 			rotate(10deg);
+			-webkit-animation: 	firefly 30s infinite;
+			-moz-animation: 	firefly 30s infinite;
+			-o-animation: 		firefly 30s infinite;
+			animation: 			firefly 30s infinite;
+
+			@include breakpoint(mama-bear) {
+				width: 490px;
+				height: 370px;
+				top: 100px;
+				left: 100px;
+			}
+
+			@include breakpoint(sister-bear) {
+				width: 380px;
+				height: 310px;
+				top: 0;
+				left: 100px;
+			}
+
+			@include breakpoint(baby-bear) {
+				width: 290px;
+				height: 240px;
+				top: 100px;
+				left: 50px;
+			}
+
+			@include breakpoint(atomic-bear) {
+
+			}
+		}
+		
+		#galaxy-mario.animated:before {
+			content: '';
+			position: absolute;
+			background: url(/images/3D-era/super-mario-galaxy/starburst.png) no-repeat;
+			background-size: cover;
+			width: 150px;
+			height: 150px;
+			top: 158px;
+			left: 441px;
+			-webkit-animation: twinkle 100ms infinite;
+			-moz-animation: twinkle 100ms infinite;
+			-o-animation: twinkle 100ms infinite;
+			animation: twinkle 100ms infinite;
+			
+			@include breakpoint(mama-bear) {
+					top: 209px;
+					left: -48px;
+			}
+
+			@include breakpoint(sister-bear) {
+					top: 209px;
+					left: -48px;
+			}
+
+			@include breakpoint(baby-bear) {
+					top: -11px;
+					left: 172px;
+			}
+		}
+		
+		#galaxy-star-1 {
+			background: url(/images/3D-era/super-mario-galaxy/star-1.png) no-repeat 50% 100%;
+			background-size: 100%;
+			position: absolute;
+			z-index: 4;
+			width: 228px;
+			height: 233px;
+			top: 120px;
+			left: 70px;
+
+			@include breakpoint(mama-bear) {
+				width: 150px;
+				height: 150px;
+				left: 0;
+			}
+
+			@include breakpoint(sister-bear) {
+				width: 150px;
+				height: 150px;
+				left: 0;
+			}
+
+			@include breakpoint(baby-bear) {
+				width: 100px;
+				height: 100px;
+				top: 180px;
+				left: -50px;
+			}
+		}
+		
+		#galaxy-star-1.animated:before {
+			content: '';
+			position: absolute;
+			background: url(/images/3D-era/super-mario-galaxy/starburst.png) no-repeat;
+			background-size: cover;
+			width: 150px;
+			height: 150px;
+			top: 22px;
+			left: -40px;
+			-webkit-animation: twinkle 100ms infinite;
+			-moz-animation: twinkle 100ms infinite;
+			-o-animation: twinkle 100ms infinite;
+			animation: twinkle 100ms infinite;
+				
+			@include breakpoint(mama-bear) {
+					width: 100px;
+					height: 100px;
+					top: 9px;
+					left: -30px;
+			}
+
+			@include breakpoint(sister-bear) {
+					width: 100px;
+					height: 100px;
+					top: 9px;
+					left: -30px;
+			}
+
+			@include breakpoint(baby-bear) {
+					width: 100px;
+					height: 100px;
+					top: -10px;
+					left: -30px;
+			}
+		}
+		#galaxy-star-2 {
+			background: url(/images/3D-era/super-mario-galaxy/star-2.png) no-repeat 50% 100%;
+			background-size: 100%;
+			position: absolute;
+			z-index: 4;
+			-webkit-filter: blur(1px); 
+			width: 100px;
+			height: 100px;
+			top: 420px;
+			left: 750px;
+
+			@include breakpoint(mama-bear) {
+				width: 60px;
+				height: 60px;
+				left: 450px;
+			}
+
+			@include breakpoint(sister-bear) {
+				display: none;
+			}
+
+			@include breakpoint(baby-bear) {
+				display: none;
+			}
+		}
+		
+		#galaxy-star-2.animated:before {
+			content: '';
+			position: absolute;
+			background: url(/images/3D-era/super-mario-galaxy/starburst.png) no-repeat;
+			background-size: cover;
+			width: 100px;
+			height: 100px;
+			top: -19px;
+			left: 29px;
+			-webkit-animation: twinkle 3s infinite;
+			-moz-animation: twinkle 3s infinite;
+			-o-animation: twinkle 3s infinite;
+			animation: twinkle 3s infinite;
+		}
+		
+		.zoomZoom {
+			-webkit-transform: scale(1);
+			-moz-transform: scale(1);
+			-o-transform: scale(1);
+			transform: scale(1);
+			
+			-webkit-animation: zoomZoom 2s;
+			-moz-animation: zoomZoom 2s;
+			-o-animation: zoomZoom 2s;
+			animation: zoomZoom 2s;
+		}
+	}
+}
+
+@-webkit-keyframes twinkle {
+  50%   { opacity: 0.8; }
+}
+@-moz-keyframes twinkle {
+  50%   { opacity: 0.8; }
+}
+@-o-keyframes twinkle {
+  50%   { opacity: 0.8; }
+}
+@keyframes twinkle {
+  50%   { 
+  	opacity: 0.8; 
+  }
+}
+
+@-webkit-keyframes zoomZoom {
+	from   { -webkit-transform: scale(0.5); opacity: 0.8; }
+	to   { -webkit-transform: scale(1); opacity: 1; }
+}
+@-moz-keyframes zoomZoom {
+	from   { -moz-transform: scale(0.5); opacity: 0.8; }
+	to   { -moz-transform: scale(1); opacity: 1; }
+}
+@-o-keyframes zoomZoom {
+	from   { -o-transform: scale(0.5); opacity: 0.8; }
+	to   { -o-transform: scale(1); opacity: 1; }
+}
+@keyframes zoomZoom {
+	from   { transform: scale(0.5); opacity: 0.8; }
+	to   { transform: scale(1); opacity: 1; }
+}
+
+@-webkit-keyframes rearview {
+	from   { -webkit-transform: scale(1); }
+	to   { -webkit-transform: scale(0.8); }
+}
+
+@-webkit-keyframes firefly {
+  50%   { -webkit-transform: rotate(-5deg); }
+}
+@-moz-keyframes firefly {
+  50%   { -moz-transform: rotate(-5deg); }
+}
+@-o-keyframes firefly {
+  50%   { -o-transform: rotate(-5deg); }
+}
+@keyframes firefly {
+  50%   { transform: rotate(-5deg); }
+}

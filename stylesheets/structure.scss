@@ -1,0 +1,232 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	@include medium-p;
+
+	@include breakpoint(baby-bear) {
+		@include small-p;
+	}
+}
+
+.wrapper, .main-content {
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	overflow: hidden;
+}
+
+.main-content {
+	position: relative; /* needed for pages_container below */
+	opacity: 0;
+	background: #171717;
+	background-position: top center;
+	background-size: cover;
+	@include transitionFast;
+}
+
+.game-page {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	padding-left: 100px;
+	position: relative;
+	z-index: 0;
+
+	@include breakpoint(mama-bear) {
+		padding-left: 80px;
+	}
+
+	@include breakpoint(sister-bear) {
+		padding-left: 80px;
+	}
+
+	@include breakpoint(baby-bear) {
+		padding-left: 0;
+	}
+}
+
+.article-wrapper {
+	display: table;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+	right: 0;
+	top: 0;
+	width: 500px;
+	pointer-events:none;
+
+	-webkit-transition-property: opacity;
+	-moz-transition-property: opacity;
+	transition-property: opacity;
+
+	-webkit-transition-duration: 500ms;
+	-moz-transition-duration: 500ms;
+	transition-duration: 500ms;
+
+
+	@include breakpoint(mama-bear) {
+		width: 400px;
+	}
+
+	@include breakpoint(sister-bear) {
+		width: 320px;
+	}
+
+	@include breakpoint(baby-bear) {
+		width: 100%;
+		display: block;
+		z-index: 10;
+		top: 70%;
+		height: 100%;
+		pointer-events:auto;
+		background-color: #fff;
+		@include transitionFast;
+	}
+
+	&.open {
+		top: 40px;
+		background-color: whiteSmoke;
+
+		.game-block .game-block-inner {
+			background-color: whiteSmoke;
+		}
+
+		.game-block { // Enables scrolling the internal container on mobile
+			overflow-y: auto;
+			-webkit-overflow-scrolling: touch;
+			max-height: 300px;
+			padding-bottom: 80px;
+		}
+
+		#mobile-fullscreen-toggle {
+			position: fixed;
+			top: 40px;
+		}
+
+		#gradient-mask {display: none;}
+
+		#mobile-off-canvas-icons {
+			display: block;
+			position: fixed;
+		}
+
+		#mobile-fullscreen-toggle {
+			-webkit-transform: rotate(180deg);
+		}
+	}
+
+	#gradient-mask {
+		display: none;
+		width: 100%;
+		height: 100px;
+		position: absolute;
+		background-image: -webkit-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.9));
+		background-image: -moz-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.9));
+		background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.9));
+		z-index: 1;
+		bottom: 70%;
+
+		@include breakpoint(baby-bear) {
+			display: block;
+		}
+	}
+}
+
+body.start, body.finish {
+	.article-wrapper, .game-block {display: none;}
+	.game-block-inner {background-color: transparent; padding: 0;}
+}
+
+#pages_container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	-ms-touch-action: none;
+}
+#content, #before_content, #after_content {
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+}
+.content {
+	top: 0;
+}
+.before_content {
+	top: -20px;
+	transform: translateY(-100%);
+	-webkit-transform: translateY(-100%);
+
+	@include breakpoint(baby-bear) {
+		top: -15px;
+	}
+	@include breakpoint(atomic-bear) {
+		top: -10px;
+	}
+}
+.after_content {
+	top: 20px;
+	transform: translateY(100%);
+	-webkit-transform: translateY(100%);
+
+	@include breakpoint(baby-bear) {
+		top: 15px;
+	}
+	@include breakpoint(atomic-bear) {
+		top: 10px;
+	}
+}
+#before_gutter, #after_gutter {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 20px;
+	-webkit-backface-visibility: hidden;
+
+	@include breakpoint(baby-bear) {
+		height: 15px;
+	}
+	@include breakpoint(atomic-bear) {
+		height: 10px;
+	}
+}
+#before_gutter {
+	top: 0;
+}
+#after_gutter {
+	top: 100%;
+}
+
+.main-stage {
+	display: table;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	padding-right: 500px;
+
+	.main-stage-inner {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	@include breakpoint(mama-bear) {
+		padding-right: 400px;
+	}
+
+	@include breakpoint(sister-bear) {
+		padding-right: 320px;
+	}
+
+	@include breakpoint(baby-bear) {
+		padding: 0;
+	}
+}

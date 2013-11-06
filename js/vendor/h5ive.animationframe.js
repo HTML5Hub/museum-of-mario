@@ -1,0 +1,5 @@
+/*! animationFrame.h5ive.js | (c) Kyle Simpson | MIT License: http://getify.mit-license.org */
+
+this.h5 = {};
+
+!function(a){function f(){var a;do a=Math.floor(1e9*Math.random());while(a in e);return a}function g(a){var c=f();return e[c]=b(function(){delete e[c],a.apply(d,arguments)}),c}function h(a){var c;return c=g(function(){e[c]=b(function(){delete e[c],a.apply(d,arguments)})})}function i(a){return a in e&&(c(e[a]),delete e[a]),d}function j(){throw new Error("'requestAnimationFrame' not supported.")}if(!a)throw new Error("animationFrame.h5ive: core.h5ive required.");var d,b=window.requestAnimationFrame||window.msRequestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.oRequestAnimationFrame,c=window.cancelAnimationFrame||window.msCancelAnimationFrame||window.msCancelRequestAnimationFrame||window.mozCancelAnimationFrame||window.mozCancelRequestAnimationFrame||window.webkitCancelAnimationFrame||window.webkitCancelRequestAnimationFrame||window.oCancelAnimationFrame||window.oCancelRequestAnimationFrame,e={};d=b&&c?{queue:g,queueAfter:h,cancel:i}:{queue:j,queueAfter:j,cancel:j},a.animationFrame=d}(this.h5);

@@ -1,0 +1,248 @@
+#super-mario-bros-Wii-WiiU {
+
+	background:white;
+
+	.main-stage {
+		width: 100%;
+		position:relative;
+		
+		background: #064bcc url(/images/modern-era/super-mario-bros-Wii&WiiU/background.jpg) no-repeat;
+		background-size: 1800px auto;
+		background-position: left bottom;
+		
+		@include breakpoint(mama-bear) {
+			background-size: 1600px auto;
+			background-position:30% bottom;
+		}
+		
+		@include breakpoint(sister-bear) {
+			background-size: 1600px auto;
+			background-position:30% bottom;
+		}
+		
+		@include breakpoint(baby-bear) {
+			background-size: 1000px auto;
+			height:70%;
+			display:block;
+			margin:0;
+			position:absolute !important;
+			top:0;
+			left:0;
+			width:100%;
+			display:block; 
+		}
+		
+		.clicker{
+			width: 30%;
+			margin: 5% auto;
+			height: 80%;
+			cursor:pointer;
+		}
+
+		.character{
+			overflow:hidden;
+			width: 380px;
+			height: 195px;
+			background-size:11471px auto;
+			
+			-webkit-animation-name: jump, fall;
+			-webkit-animation-duration: .2s, .2s;
+			-webkit-animation-timing-function: linear, linear;
+			-webkit-animation-delay: 0s, .7s;
+			-webkit-animation-play-state:paused;
+			-webkit-animation-iteration-count: 1, 1;
+			-webkit-animation-fill-mode: forwards;
+			
+			
+			-moz-animation-name: jump, fall;
+			-moz-animation-duration: .2s, .2s;
+			-moz-animation-timing-function: linear, linear;
+			-moz-animation-delay: 0s, .7s;
+			-moz-animation-play-state:paused;
+			-moz-animation-iteration-count: 1, 1;
+			-webkit-animation-fill-mode: forwards;
+			
+			animation-name: jump, fall;
+			animation-duration: .2s, .2s;
+			animation-timing-function: linear, linear;
+			animation-delay: 0s, .7s;
+			animation-play-state:paused;
+			animation-iteration-count: 1, 1;
+			-webkit-animation-fill-mode: forwards;
+			
+			@include breakpoint(mama-bear) {
+				width: 338px;
+				height: 174px;
+			}
+			
+			@include breakpoint(sister-bear) {
+				width: 338px;
+				height: 174px;
+			}
+			
+			@include breakpoint(baby-bear) {
+				width: 211px;
+				height: 109px;
+			}
+		}
+		.character.mario{
+			position:absolute;
+			bottom: 268px;
+			left: 34%;
+			z-index:1;
+			background: url(/images/modern-era/super-mario-bros-Wii&WiiU/mario.png) no-repeat;
+			background-position: -1.3% 0;
+			background-size:11471px auto;
+			
+			@include breakpoint(mama-bear) {
+				background-size:10196px auto;
+				bottom: 239px;
+				left: 35%;
+			}
+			
+			@include breakpoint(sister-bear) {
+				background-size:10196px auto;
+				bottom: 239px;
+				left: 29%;
+			}
+			
+			@include breakpoint(baby-bear) {
+				background-size:6372px auto;
+				bottom: 149px;
+				left: 60%;
+			}
+		}
+		.character.luigi{
+			position:absolute;
+			bottom: 96px;
+			left: 40%;
+			z-index:2;
+			background: url(/images/modern-era/super-mario-bros-Wii&WiiU/luigi.png) no-repeat;
+			background-position: -1.3% 0;
+			background-size:11471px auto;
+			
+			@include breakpoint(mama-bear) {
+				background-size:10196px auto;
+				bottom: 84px;
+				left: 27%;
+			}
+			
+			@include breakpoint(sister-bear) {
+				background-size:10196px auto;
+				bottom: 84px;
+				left: 23%;
+			}
+			
+			@include breakpoint(baby-bear) {
+				background-size:6372px auto;
+				bottom: 52px;
+				left: 42%;
+			}
+		}
+		.character.toad-blue{
+			position:absolute;
+			bottom: 269px;
+			left: 17%;
+			z-index:1;
+			background: url(/images/modern-era/super-mario-bros-Wii&WiiU/mushroomblue.png) no-repeat;
+			background-position: -1.3% 0;
+			background-size:11471px auto;
+			
+			@include breakpoint(mama-bear) {
+				background-size:10196px auto;
+				bottom: 239px;
+				left: 10%;
+			}
+			
+			@include breakpoint(sister-bear) {
+				background-size:10196px auto;
+				bottom: 239px;
+				left: 3%;
+			}
+			
+			@include breakpoint(baby-bear) {
+				background-size:6372px auto;
+				bottom: 149px;
+				left: 30%;
+			}
+		}
+		.character.toad-yellow{
+			position:absolute;
+			bottom: 89px;
+			left: 0%;
+			z-index:2;
+			background: url(/images/modern-era/super-mario-bros-Wii&WiiU/mushroomyellow.png) no-repeat;
+			background-position: -1.3% 0;
+			background-size:11471px auto;
+			
+			@include breakpoint(mama-bear) {
+				background-size:10196px auto;
+				bottom: 79px;
+				left: 0;
+			}
+			
+			@include breakpoint(sister-bear) {
+				background-size:10196px auto;
+				bottom: 79px;
+				left: 0;
+			}
+			
+			@include breakpoint(baby-bear) {
+				background-size:6372px auto;
+				bottom: 49px;
+				left: 0;
+			}
+		}
+		
+	}
+}
+@-webkit-keyframes jump {
+	from { margin-bottom: 0 }
+	to { margin-bottom: 20% }
+}
+@-webkit-keyframes flip {
+	from { background-position: -1.3%; margin-bottom: 20% }
+	to { background-position: 63.4%; margin-bottom: 20% }
+}
+@-webkit-keyframes fall{
+	from { margin-bottom: 20%; background-position: 63.4% }
+	to { margin-bottom: 0; background-position: 63.4% }
+}
+@-webkit-keyframes crash{
+	from { margin-bottom: 0px; background-position: 63.4% 15px }
+	to { margin-bottom: 0px; background-position: 101.37% -10px }
+}
+@keyframes jump {
+	from { margin-bottom: 0 }
+	to { margin-bottom: 20% }
+}
+@keyframes flip {
+	from { background-position: -1.3%; margin-bottom: 20% }
+	to { background-position: 63.4%; margin-bottom: 20% }
+}
+@keyframes fall{
+	from { margin-bottom: 20%; background-position: 63.4% }
+	to { margin-bottom: 0; background-position: 63.4% }
+}
+@keyframes crash{
+	from { margin-bottom: 0px; background-position: 63.4% 15px}
+	to { margin-bottom: 0px; background-position: 101.37% -10px }
+}
+
+@-moz-keyframes jump {
+	from { margin-bottom: 0 }
+	to { margin-bottom: 20% }
+}
+@-moz-keyframes flip {
+	from { background-position: -1.3%; margin-bottom: 20% }
+	to { background-position: 63.4%; margin-bottom: 20% }
+}
+@-moz-keyframes fall{
+	from { margin-bottom: 20%; background-position: 63.4% }
+	to { margin-bottom: 0; background-position: 63.4% }
+}
+@-moz-keyframes crash{
+	from { margin-bottom: 0px; background-position: 63.4% 15px }
+	to { margin-bottom: 0px; background-position: 101.37% -10px }
+}
+

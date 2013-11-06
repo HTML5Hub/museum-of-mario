@@ -1,0 +1,62 @@
+{$define "#hash-tweets"}
+    {$loop $.statuses }
+        {$partial "#single-tweet" | _.value $}
+    {$}
+    <li class="tweet tweet--alert">
+        <a href="https://twitter.com/search?q=%23MarioMemories"
+            target="_blank"
+            class="tweet-alert__button">
+            See All Tweets
+        </a>
+    </li>
+{$}
+
+{$define "#single-tweet"}
+    <li data-id="{$= $.id_str $}" class="tweet">
+        <a href="http://twitter.com/{$= $.user.screen_name $}"
+            alt="{$= $.user.screen_name $}"
+            target="_blank"
+            class="tweet__user">
+            @{$= $.user.screen_name $}
+        </a>
+        <div class="tweet__content">
+            {$= $.text $}
+            <span class="tweet__time" data-created="{$= $.created_at $}">
+                {$= $.friendly_time $}
+            </span>
+        </div>
+    </li>
+{$}
+
+{$define "#new-tweet-alert"}
+    <li class="tweet tweet--alert js-tweet-new">
+        <a href="#" class="js-load-more-tweets tweet-alert__button">{$= $.text $}</a>
+    </li>
+{$}
+
+{$define "#featured-tweets"}
+    {$loop $.statuses }
+        {$partial "#featured-tweet" | _.value $}
+    {$}
+{$}
+
+{$define "#featured-tweet"}
+    <li class="tweet tweet--featured">
+        <a href="http://twitter.com/{$= $.user.screen_name $}"
+            target="_blank"
+            class="tweet__avatar">
+            <img width="100" src="{$= $.user.profile_image_url $}" alt="">
+        </a>
+        <div class="tweet__content">
+            <a href="http://twitter.com/{$= $.user.screen_name $}"
+                alt="{$= $.user.screen_name $}"
+                target="_blank"
+                class="tweet__user">
+                @{$= $.user.screen_name $}
+            </a>
+            {$= $.text$}
+            <br />
+            <a href="https://twitter.com/intent/retweet?tweet_id={$= $.id_str $}" class="btn btn-red tweet__retweet"><i class="icon-retweet"></i> Retweet this!</a>
+        </div>
+    </li>
+{$}

@@ -1,0 +1,306 @@
+body.start {
+	.article-wrapper {display: none;}
+
+	#start-screen {
+
+		background-image: url(/images/start/start-bg.png), -webkit-radial-gradient(bottom center, #00aff2, #08C);
+		background-image: url(/images/start/start-bg.png), radial-gradient(bottom center, #00aff2, #08C);
+		background-image: url(/images/start/start-bg.png), -moz-radial-gradient(bottom center, #00aff2, #08C);
+		background-image: url(/images/start/start-bg.png), -ms-radial-gradient(bottom center, #00aff2, #08C);
+		background-repeat: no-repeat;
+		background-position: 80px bottom;
+
+		@include breakpoint(mama-bear) {
+			background-size: 160%;
+		}
+
+		@include breakpoint(sister-bear) {
+			background-size: 160%;
+		}
+
+		@include breakpoint(baby-bear) {
+			background-position: -130px bottom;
+			background-size: 330%;
+		}
+
+		#animationContainer > div {
+			background:transparent !important;
+		}
+		#animationContainer > div > div:nth-child(4) > div:first-child {
+			background-color: #009cdf !important;
+		}
+	}
+}
+
+.cover-block {
+	display: table;
+	position: absolute;
+	padding: 0 40px;
+	width: 760px;
+	height: 100%;
+
+
+	& .cover-block-inner {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	h1 {
+		font-size: 80px;
+		line-height: 90px;
+		font-family: $futura-bold;
+		color: #fff;
+
+		@include breakpoint(mama-bear) {
+			font-size: 60px;
+			line-height: 60px;
+		}
+		@include breakpoint(sister-bear) {
+			font-size: 48px;
+			line-height: 48px;
+		}
+	}
+
+	h5 {color: #fff;}
+
+	p {
+		color: #fff;
+		@include medium-p;
+
+		&.subhead {
+			@include large-p;
+
+			@include breakpoint(sister-bear) {
+				font-size: 18px;
+				line-height: 22px;
+			}
+		}
+	}
+
+	@include breakpoint(mama-bear) {
+		width: 600px;
+		padding: 0 40px;
+	}
+
+	@include breakpoint(sister-bear) {
+		width: 490px;
+
+		p {
+			@include medium-p;
+			width: 80%;
+		}
+	}
+
+	@include breakpoint(baby-bear) {
+		position: absolute;
+		bottom: 0;
+		margin: 0;
+		padding: 0 20px;
+		width: 100%;
+		display: table;
+
+		& .cover-block-inner {
+			display: table-cell;
+			vertical-align: middle;
+			padding-top: 80px; // to account for the mobile nav dock
+		}
+
+		h1 {
+			font-size: 22px;
+			line-height: 24px;
+			width: 66%;
+		}
+		p {
+			font-size: 12px;
+			line-height: 16px;
+			width: 100%;
+
+			@include breakpoint(baby-bear) {
+				width: 66%;
+				font-size: 12px;
+				line-height: 16px;
+				margin-bottom: 10px;
+
+				&.subhead {
+					font-size: 12px;
+					line-height: 16px;
+				}
+			}
+		}
+	}
+}
+
+#contest-block {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	top: 20px;
+	right: 20px;
+	width: 440px;
+
+	@include breakpoint(sister-bear) {
+		display: block !important;
+	}
+
+	@include breakpoint(baby-bear) {
+		display: block !important;
+		position: relative;
+		top: 0;
+		min-height: 80px;
+	}
+
+	.contest-image {
+		float: left;
+		width: 105px;
+		height: 112px;
+		background: url(/images/ultrabook.png) top left no-repeat;
+		background-size: cover;
+		margin: 0 20px 20px 0;
+		position: relative;
+		z-index: 1;
+
+		@include breakpoint(baby-bear) {
+			width: 57px;
+			height: 60px;
+			margin: 0 10px 0 0;
+		}
+	}
+
+	.contest-description {
+		color: #fff;
+		a.inline-link {
+			color: #fff;
+			border-bottom: 1px dotted #fff;
+			padding-bottom: 1px;
+			&:hover {
+				border-bottom: 1px solid #fff;
+			}
+		}
+	}
+	i {
+		position: absolute;
+		z-index: 0;
+		font-size: 130px;
+		left: -26px;
+		top: -27px;
+		z-index: 0;
+		color: #fff;
+		color: rgba(255,255,255,0.5);
+		-webkit-animation: 500ms grow infinite;
+	}
+	@include breakpoint(mama-bear) {
+		width: 380px;
+	}
+
+	@include breakpoint(sister-bear) {
+		width: 270px;
+		.contest-image {display: none;}
+		.contest-description {
+			font-size: 12px;
+			line-height: 16px;
+		}
+	}
+
+	@include breakpoint(baby-bear) {
+		width: 100%;
+		right: auto;
+		top: 40px;
+		background-color: #0B2639;
+		padding: 15px 20px 10px;
+
+		h5 {
+			letter-spacing: 0;
+			font-size: 14px;
+		}
+		.contest-description {
+			font-size: 13px;
+			line-height: 15px;
+		}
+		.btn {display: none;}
+	}
+}
+
+#start-screen {
+
+	background: #00aff2 url(/images/start/start-bg.png);
+	background-image: -webkit-radial-gradient(bottom center, #00aff2, #08C);
+	background-image: radial-gradient(bottom center, #00aff2, #08C);
+	background-image: -moz-radial-gradient(bottom center, #00aff2, #08C);
+	background-image: -ms-radial-gradient(bottom center, #00aff2, #08C);
+
+	#animationContainer > div{
+		background:transparent !important;
+	}
+
+	#animationContainer > div > div:last-child{
+		left:600px !important;
+		top:200px !important;
+
+		@include breakpoint(baby-bear) {
+			left:650px !important;
+			top:270px !important;
+		}
+	}
+
+	.mario-canvas {
+		position: relative;
+		display: table;
+		z-index: -1;
+		top: 0;
+		right: 0;
+		background-color: transparent !important;
+		width: 100%;
+		height: 100%;
+		margin-left: 50%;
+		overflow: hidden;
+
+		#animationContainer {
+			height: 100%;
+			display: table-cell;
+			vertical-align: middle;
+			position: relative;
+			margin-top: -100px;
+		}
+
+		@include breakpoint(mama-bear) {
+			margin-left: 45%;
+
+			-webkit-transform: scale(0.8);
+			-moz-transform: scale(0.8);
+			-o-transform: scale(0.8);
+			transform: scale(0.8);
+			transform-origin: 0 0;
+		}
+
+		@include breakpoint(sister-bear) {
+			margin-left: 25%;
+
+			-webkit-transform: scale(0.8);
+			-moz-transform: scale(0.8);
+			-o-transform: scale(0.8);
+			transform: scale(0.8);
+			transform-origin: 0 0;
+		}
+
+		@include breakpoint(baby-bear) {
+			z-index: -1;
+			overflow: visible;
+			position: absolute;
+			margin-left: 30%;
+			margin-top: -30%;
+			top: auto;
+			right: auto;
+
+			-webkit-transform: scale(0.5) !important;
+			-moz-transform: scale(0.5) !important;
+			-o-transform: scale(0.5) !important;
+			transform: scale(0.5) !important;
+			transform-origin: 0 200px;
+			-webkit-transform-origin: 0 200px;
+		}
+	}
+
+	.EDGE-1672177555{
+		background-color:transparent !important;
+	}
+}

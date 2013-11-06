@@ -1,0 +1,312 @@
+#yoshis-island {
+	background: url(/images/16bit-era/yoshis-island/yoshis-island-bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom center;
+
+	@include breakpoint(baby-bear) {
+		background-position: 0 -130px;
+	}
+
+	#yoshi-wrapper {
+		position: relative;
+		z-index: 10;
+		width: 200px;
+		height: 200px;
+		display: block;
+		margin: 0 auto;
+
+		#yoshi {
+			background:	url(/images/16bit-era/yoshis-island/yoshi.png);
+			background-repeat: no-repeat;
+			background-position: 0 0;
+			background-size: cover;
+			position: absolute;
+			width: 90px;
+			height: 108px;
+			top: 50px;
+			left: 65px;
+
+			&.cloak {display: none !important;}
+
+			@include breakpoint(baby-bear) {
+				top: -40px;
+			}
+		}
+		.transformed {
+			display: none;
+			z-index: 10;
+			width: 240px;
+			height: 240px;
+			position: absolute;
+			top: 0;
+			left: 30px;
+			background-color: transparent;
+			background-repeat: no-repeat;
+			background-position: top left;
+			
+			&.as-moletank 	{background-image: url(/images/16bit-era/yoshis-island/as-moletank_600.png);}
+			&.as-submarine 	{background-image: url(/images/16bit-era/yoshis-island/as-submarine_600.png);}
+			&.as-train 		{background-image: url(/images/16bit-era/yoshis-island/as-train_600.png);}
+			&.as-helicopter {background-image: url(/images/16bit-era/yoshis-island/as-helicopter_600.png);}
+			&.as-racecar 	{background-image: url(/images/16bit-era/yoshis-island/as-racecar_600.png);}
+
+			@include breakpoint(baby-bear) {
+				top: -80px;
+			}
+		}	
+
+		#transform-poof {
+			display: none;
+			position: absolute;
+			z-index: 0;
+			top: -20px;
+			left: -30px;
+			width: 340px;
+			height: 340px;
+			-webkit-animation: yoshiPoof 3500ms 1;
+			-moz-animation: yoshiPoof 3500ms 1;
+			animation: yoshiPoof 3500ms 1;
+		}
+
+		#baby-mario {
+			display: none;
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			z-index: -1;
+			top: 60px;
+			left: 50px;
+			background-image: url(/images/16bit-era/yoshis-island/yoshi-powerUps.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: -500px,0;
+
+			@include breakpoint(baby-bear) {
+				display: none;
+			}
+
+			&.animating {
+				display: block;
+				-webkit-animation:	babyMarioAscent 5s 1;
+			   	-moz-animation:		babyMarioAscent 5s 1;
+			    -ms-animation:		babyMarioAscent 5s 1;
+			    -o-animation:		babyMarioAscent 5s 1;
+			    animation:			babyMarioAscent 5s 1;
+			}
+		}
+	}
+
+	#transform-mask {
+		opacity: 0;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(0,0,0,0.7);
+		@include transitionFast;
+
+		&.active {
+			opacity: 1;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		}
+	}
+}
+
+@-webkit-keyframes babyMarioAscent {
+	from {
+		top: 60px;
+	}
+	to {
+		top: -500px;
+	}
+}
+@-moz-keyframes babyMarioAscent {
+	from {
+		top: 60px;
+	}
+	to {
+		top: -500px;
+	}
+}
+@-o-keyframes babyMarioAscent {
+	from {
+		top: 60px;
+	}
+	to {
+		top: -500px;
+	}
+}
+@keyframes babyMarioAscent {
+	from {
+		top: 60px;
+	}
+	to {
+		top: -500px;
+	}
+}
+
+@-webkit-keyframes yoshiPoof {
+	0% {background-color: #fff;}
+	20% {background-color: red;}
+	40% {background-color: green;}
+	60% {background-color: black;}
+	80% {background-color: purple;}
+	100% {background-color: blue;}
+}
+@-moz-keyframes yoshiPoof {
+	0% {background-color: #fff;}
+	20% {background-color: red;}
+	40% {background-color: green;}
+	60% {background-color: black;}
+	80% {background-color: purple;}
+	100% {background-color: blue;}
+}
+@-o-keyframes yoshiPoof {
+	0% {background-color: #fff;}
+	20% {background-color: red;}
+	40% {background-color: green;}
+	60% {background-color: black;}
+	80% {background-color: purple;}
+	100% {background-color: blue;}
+}
+@keyframes yoshiPoof {
+	0% {background-color: #fff;}
+	20% {background-color: red;}
+	40% {background-color: green;}
+	60% {background-color: black;}
+	80% {background-color: purple;}
+	100% {background-color: blue;}
+}
+
+
+#yoshi-power-ups {
+	position: relative;
+	width: 600px;
+	height: 150px;
+	display: block;
+	margin: 0 auto;
+
+	@include breakpoint(baby-bear) {
+		height: 120px;
+	}
+
+	a {
+		display: inline-block;
+		position: relative;
+		width: 100px;
+		height: 100px;
+		float: left;
+		margin-right: 20px;
+		outline: none;
+
+		& span {
+			display: block;
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			background-image: url(/images/16bit-era/yoshis-island/yoshi-powerUps.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+			-webkit-animation: float 3s infinite;
+			-moz-animation: float 3s infinite;
+			-o-animation: float 3s infinite;
+			animation: float 3s infinite;
+			@include transitionFast;
+		}
+
+		&:nth-child(1) span {
+			background-position: 0,0;
+			-webkit-transform: translateY(-35px);
+			-moz-transform: translateY(-35px);
+			-o-transform: translateY(-35px);
+			transform: translateY(-35px);
+		}
+		&:nth-child(2) span {
+			background-position: -100px,0;
+			-webkit-transform: translateY(20px);
+			-moz-transform: translateY(20px);
+			-o-transform: translateY(20px);
+			transform: translateY(20px);
+		}
+		&:nth-child(3) span {
+			background-position: -200px,0;
+			-webkit-transform: translateY(-15px);
+			-moz-transform: translateY(-15px);
+			-o-transform: translateY(-15px);
+			transform: translateY(-15px);
+		}
+		&:nth-child(4) span {
+			background-position: -300px,0;
+			-webkit-transform: translateY(15px);
+			-moz-transform: translateY(15px);
+			-o-transform: translateY(15px);
+			transform: translateY(15px);
+		}
+		&:nth-child(5) span {
+			background-position: -400px,0;
+			-webkit-transform: translateY(-25px);
+			-moz-transform: translateY(-25px);
+			-o-transform: translateY(-25px);
+			transform: translateY(-25px);
+		}
+	}
+
+	@include breakpoint(mama-bear) {
+		width: 560px;
+		a {
+			margin-right: 10px;
+		}
+	}
+
+	@include breakpoint(sister-bear) {
+		width: 400px;
+		a {
+			margin-right: 10px;
+			width: 90px;
+			height: 90px;
+			-webkit-transform: scale(0.9,0.9);
+			-moz-transform: scale(0.9,0.9);
+			-o-transform: scale(0.9,0.9);
+			transform: scale(0.9,0.9);
+		}
+	}
+
+	@include breakpoint(baby-bear) {
+		width: 320px;
+
+		a {
+			margin-right: 0;
+			width: 60px;
+			height: 60px;
+			-webkit-transform: scale(0.6,0.6);
+			-moz-transform: scale(0.6,0.6);
+			-o-transform: scale(0.6,0.6);
+			transform: scale(0.6,0.6);
+		}
+	}
+}
+
+@-webkit-keyframes float {
+  50% { 
+  	top: 10px; 
+  }
+}
+@-moz-keyframes float {
+  50% { 
+  	top: 10px; 
+  }
+}
+@-o-keyframes float {
+  50% { 
+  	top: 10px; 
+  }
+}
+@keyframes float {
+  50% { 
+  	top: 10px; 
+  }
+}

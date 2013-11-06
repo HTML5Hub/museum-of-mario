@@ -1,0 +1,163 @@
+#super-mario-3D-world {
+
+	* {
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	.main-stage {
+
+		background: #4598ff;
+		cursor:pointer;
+		
+		@include breakpoint(baby-bear) {
+			display:block;
+			width:100%;
+			padding-top:40px;
+			position:absolute;
+			top:0;
+			left:0;
+			height:70%;
+		}
+			
+	}
+	
+	.background {
+		display:block;
+		position:absolute;
+		height:100%;
+		width:120%;
+		margin-left:-10%;
+		z-index:1;
+		top:0;
+		left:0;
+		
+	}
+	
+	.clouds-bg {
+		width:100%;
+		height:100%;
+		background: #4598ff url('/images/modern-era/super-mario-3D-world/background.jpg') no-repeat;
+		background-size:cover;
+	}
+	
+	.scene {
+		display:block;
+		height:100%;
+		width:100%;
+		z-index:9;
+		position:absolute;
+		bottom:0;
+		left:0;
+		
+		@include breakpoint(sister-bear) {
+			height: 50%;
+			position: absolute !important;
+			bottom: 0;
+			left: 0;
+		}
+		
+		@include breakpoint(mama-bear) {
+			height: 84%;
+			position: absolute !important;
+			bottom: 0;
+			left: 0;
+		}
+		
+		@include breakpoint(baby-bear) {
+			display:block;
+			width:100%;
+			height:80%;
+		}
+	}
+	.mario {
+		height:75%;
+		width:auto;
+		position: absolute;
+		bottom: 20%;
+		left: 23%;
+		
+		@include breakpoint(mama-bear) {
+			left: 17%;
+		}
+	}
+	.ball {
+		height: 30%;
+		width: auto;
+		position: absolute;
+		bottom: 0;
+		left: 29%;
+		
+		@include breakpoint(mama-bear) {
+			left: 23%;
+		}
+	}
+	.orb {
+		height: 22%;
+		width: auto;
+		position: absolute;
+		bottom:0%;
+		left:30%;
+		opacity:0.9;
+		
+		@include breakpoint(mama-bear) {
+			left: 24%;
+		}
+	}
+	.orb1 {
+		height: 44%;
+		bottom:12%;
+		left:12%;
+		-webkit-animation: twinkle 400ms infinite;
+	}
+	.orb2 {
+		height: 40%;
+		bottom:30%;
+		left:56%;
+		-webkit-animation: twinkle 440ms infinite;
+	}
+	.orb3 {
+		height: 20%;
+		bottom:40%;
+		left:2%;
+		-webkit-animation: twinkle 500ms infinite;
+	}
+	.orb4 {
+		height: 20%;
+		bottom:63%;
+		left:18%;
+		-webkit-animation: twinkle 200ms infinite;
+	}
+	.orb5 {
+		height: 15%;
+		bottom:70%;
+		left:57%;
+		-webkit-animation: twinkle 600ms infinite;
+		
+	}
+	.orb6 {
+		height: 15%;
+		bottom:48%;
+		left:75%;
+		-webkit-animation: twinkle 800ms infinite;
+		
+	}
+	.orb7 {
+		height: 15%;
+		bottom:28%;
+		left:68%;
+		-webkit-animation: twinkle 200ms infinite;
+	}
+
+}
+
+
+
+@-webkit-keyframes twinkle {
+  50%   { opacity: 0.8; }
+}
+

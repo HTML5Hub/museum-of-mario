@@ -1,0 +1,26 @@
+{
+  "statuses": [
+    {
+      "created_at": "Sun Oct 06 21:17:31 +0000 2013",
+      "id": 386963454105378800,
+      "text": "I eventually got so good at the game that I was able to max out the scoreboard at 9,999,950 and I took a Polaroid (the original Instagram!) and mailed it to Nintendo who then printed my name in the Nintendo Fun Club and then eventually in the very first issue of Nintendo Power.",
+      "user": {
+        "id": 61133,
+        "name": "Cliff Bleszinski",
+        "screen_name": "CliffBleszinski",
+        "profile_image_url": "./images/star.png"
+      }
+    },
+    {
+      "created_at": "Sun Oct 06 21:17:31 +0000 2013",
+      "id": 386963454105378800,
+      "text": "Probably the thing I most remember about Mario--that I really can't get out of my head no matter how hard I try--is his voice (played by Charles Martinet): \"Itsa me, Mario!\" \"Hoo Hoo! 'ere we go!\"",
+      "user": {
+        "id": 61133,
+        "name": "Jim Merrick",
+        "screen_name": "JimMerrick",
+        "profile_image_url": "./images/star.png"
+      }
+    }
+  ]
+}

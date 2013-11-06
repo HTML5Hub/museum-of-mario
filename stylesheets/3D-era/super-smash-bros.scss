@@ -1,0 +1,244 @@
+body.super-smash-bros {
+	.main-content {
+		background-color: #000;
+	}
+}
+
+#super-smash-bros {
+	#smash-scene {
+		position: relative;
+		margin: 10% 100px;
+		width: 100%;
+		height: 480px;
+
+		@include breakpoint(mama-bear) {
+			margin: 0;
+			height: 100%;
+		}
+
+		@include breakpoint(sister-bear) {
+			margin: 0;
+			height: 100%;
+			left: -200px;
+		}
+
+		@include breakpoint(baby-bear) {
+			margin: 0;
+			height: 800px;
+			top: -170px;
+			left: -140px;
+			-webkit-transform: scale(0.6) !important;
+		}
+
+		#smash-bg {
+			background: url(/images/3D-era/super-smash-bros/background-dark.jpg) no-repeat;
+			background-size: cover;
+			position: absolute;
+			width: 1800px;
+			height: 1300px;
+			left: -200px;
+			top: -425px;
+
+			@include breakpoint(baby-bear) {
+				height: 1400px;
+			}
+		}
+		#smash-stalagmite {
+			background: url(/images/3D-era/super-smash-bros/stalagmite.png) no-repeat;
+			background-size: 100%;
+			position: absolute;
+			top: -200px;
+			left: 110px;
+			width: 60px;
+			height: 260px;
+
+			@include breakpoint(baby-bear) {
+				top: 30px;
+				left: 200px;
+			}
+
+			&:before {
+				content: '';
+				background: url(/images/3D-era/super-smash-bros/stalagmite.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: -100px;
+				left: 200px;
+				width: 60px;
+				height: 260px;
+			}
+		}
+		#smash-stalagmite-2 {
+			background: url(/images/3D-era/super-smash-bros/stalagmite-dark.png) no-repeat;
+			background-size: 100%;
+			position: absolute;
+			top: -210px;
+			left: 240px;
+			width: 30px;
+			height: 130px;
+			-webkit-filter: blur(1px);
+
+			&:before {
+				content: '';
+				background: url(/images/3D-era/super-smash-bros/stalagmite-dark.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: -20px;
+				left: 290px;
+				width: 30px;
+				height: 130px;
+				-webkit-filter: blur(1px);
+			}
+		}
+		#smash-mario {
+			background: url(/images/3D-era/super-smash-bros/mario.png) no-repeat;
+			background-size: 100%;
+			position: absolute;
+			top: 300px;
+			left: 110px;
+			width: 422px;
+			height: 270px;
+			
+		}
+
+		#smash-mario:after {
+			content: '';
+			background: url(/images/3D-era/super-smash-bros/blast.png) no-repeat;
+			background-size: 100%;
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			right: -160px;	
+			width: 310px;
+			height: 310px;
+			opacity: 1;
+			
+			-webkit-animation: pulseFast 100ms infinite;
+			-moz-animation: pulseFast 100ms infinite;	
+			-o-animation: pulseFast 100ms infinite;	
+			animation: pulseFast 100ms infinite;
+			
+			animation-play-state:paused;
+			-webkit-animation-play-state:paused;
+			-moz-animation-play-state:paused;
+			-o-animation-play-state:paused;
+		}
+		
+
+
+		#smash-luigi {
+			background: url(/images/3D-era/super-smash-bros/luigidark.png) no-repeat;
+			background-size: 100%;
+			position: absolute;
+			z-index: 0;
+			top: 159px;
+			left: 500px;
+			width: 203px;
+			height: 390px;
+
+			&:after {
+				content: '';
+				background: url(/images/3D-era/super-smash-bros/shadows.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				z-index: -1;
+				top: 330px;
+				left: -360px;
+				width: 595px;
+				height: 68px;
+
+				-webkit-animation: flickerSoft 100ms infinite;	
+				-moz-animation: flickerSoft 100ms infinite;	
+				-o-animation: flickerSoft 100ms infinite;	
+				animation: flickerSoft 100ms infinite;
+				
+				animation-play-state:paused;
+				-webkit-animation-play-state:paused;
+				-moz-animation-play-state:paused;
+				-o-animation-play-state:paused;
+			}
+
+			&:before {
+				content: '';
+				background: url(/images/3D-era/super-smash-bros/luigi.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				width: 203px;
+				height: 390px;
+
+				-webkit-animation: flickerFast 100ms infinite;	
+				-moz-animation: flickerFast 100ms infinite;	
+				-o-animation: flickerFast 100ms infinite;	
+				animation: flickerFast 100ms infinite;	
+				
+				animation-play-state:paused;
+				-webkit-animation-play-state:paused;
+				-moz-animation-play-state:paused;
+				-o-animation-play-state:paused;
+			}
+		}
+		
+		#smash-mario.animated:after, #smash-luigi.animated:after, #smash-luigi.animated:before  {
+			animation-play-state:running;
+			-webkit-animation-play-state:running;
+			-moz-animation-play-state:running;
+			-o-animation-play-state:running;
+		}
+		
+		#smash-fg-bottom {
+			background: url(/images/3D-era/super-smash-bros/ground-dark.jpg) no-repeat;
+			background-size: 100%;
+			position: absolute;
+			top: 490px;
+			left: -410px;
+			width: 2362px;
+			height: 300px;
+		}
+	}
+}
+
+@-webkit-keyframes pulseFast {
+	0% {opacity: 1;}
+	50% {opacity: 0.9;}
+	100% {opacity: 1;}
+}
+@-moz-keyframes pulseFast {
+	50% {opacity: 0.9;}
+}
+@-o-keyframes pulseFast {
+	50% {opacity: 0.9;}
+}
+@keyframes pulseFast {
+	50% {opacity: 0.9;}
+}
+
+@-webkit-keyframes flickerFast {
+	0% {opacity: 1;}
+	50% {opacity: 0.3;}
+	100% {opacity: 1;}
+}
+@-moz-keyframes flickerFast {
+	50% {opacity: 0.3;}
+}
+@-o-keyframes flickerFast {
+	50% {opacity: 0.3;}
+}
+@keyframes flickerFast {
+	50% {opacity: 0.3;}
+}
+
+@-webkit-keyframes flickerSoft {
+	50% {opacity: 0.99;}
+}
+@-moz-keyframes flickerSoft {
+	50% {opacity: 0.99;}
+}
+@-o-keyframes flickerSoft {
+	50% {opacity: 0.99;}
+}
+@keyframes flickerSoft {
+	50% {opacity: 0.99;}
+}

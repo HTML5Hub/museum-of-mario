@@ -1,0 +1,31 @@
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: $proxima-nova;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: $futura-bold;
+}
+h1, h2, h3 {
+	color: $red;
+	text-transform: uppercase;
+	margin: 10px 0;
+
+	@include breakpoint(mama-bear) {
+		font-size: 24px;
+	}
+}
+h5 {
+	font-size: 15px;
+	font-family: $proxima-nova-bold;
+	margin: 5px 0;
+
+	@include breakpoint(sister-bear) {
+		font-size: 12px;
+	}
+}
+img {
+	width: 100%;
+}
+a {
+	outline: none !important;
+}

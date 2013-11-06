@@ -1,0 +1,93 @@
+.preload-images{
+	img{
+		width:0px;
+		height:0px;
+	}
+}
+.donkey-kong{
+	display:block;//Override display:table, since this page does not need vertical centering.
+	.donkey-kong__art{
+		background: #000;
+		background-size: 100%;
+		height:100%;
+		//-webkit-user-select: none;//Prevent the user from selecting images. Done in JavaScript instead.
+		&.hasBackgroundImage{
+			background: #000 url(../images/arcade-era/donkey-kong/background.jpg) center top no-repeat;
+		}
+		.donkey-kong__main-stage{
+			width:100%;
+			height:100%;
+			display:block;//Override display:table-cell, since this page does not need vertical centering.
+			//position: relative;
+			@include breakpoint(papa-bear){/* 1300+. See bits.scss */
+				padding-right:500px;//-150 helps center the cabinet
+			}
+			@include breakpoint(mama-bear){/* 960 - 1300 */
+				padding-right:400px;//-150 helps center the cabinet
+			}
+			@include breakpoint(sister-bear){/* 770 - 960 */
+				padding-right:320px;
+			}
+			@include breakpoint(baby-bear){/* < 770 */
+				padding-right:0;
+				left:0;
+				display:block !important;
+				height:70%;
+				overflow:hidden;
+				padding-top:40px;
+			}
+			.donkey-kong__main-stage__inner{
+				width:100%;
+				height:100%;
+				overflow:hidden;//Prevent the 3d scene from stretching this out.
+				//background: grey;//Debug
+			}
+			&.mode__3D{
+				@include breakpoint(papa-bear){/* 1300+. See bits.scss */
+					padding-right:500px - 150px;//-150 helps center the cabinet
+				}
+				@include breakpoint(mama-bear){/* 960 - 1300 */
+					padding-right:400px - 150px;//-150 helps center the cabinet
+				}
+				@include breakpoint(sister-bear){/* 770 - 960 */
+					
+				}
+				@include breakpoint(baby-bear){/* < 770 */
+					
+				}
+				.donkey-kong__main-stage__inner{
+					overflow:hidden;//Prevent the 3d scene from stretching this out.
+				}
+			}
+			&.mode__2D{
+				display:table;
+				.donkey-kong__main-stage__inner{
+					display:table-cell;
+					vertical-align: bottom;
+					height:100%;
+					@include breakpoint(baby-bear){/* < 770 */
+						//vertical-align: top;
+					}
+					.donkey-kong__flip-book{
+						width:100%;
+						position: relative;//Allow absolute positioning of children, so they can overlap.
+						.donkey-kong__flip-book__image{
+							position: absolute;//Stack images on top of the first child.
+							top:0;left:0;//Stack on top of the main image.
+							//opacity:0;//Hide by default.
+							width:100%;//Fill the container, which is always square.
+							//height:100%;//...
+						}
+						.donkey-kong__flip-book__image:first-child{
+							position:static !important;//Keep the first child in a static position, so it can set the size of its container.
+							display:block !important;//Same reason.
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+

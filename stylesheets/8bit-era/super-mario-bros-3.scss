@@ -1,0 +1,223 @@
+
+#super-mario-bros-3 {
+	background: url(/images/8bit-era/super-mario-bros-3/bg-superMarioBros3.png), #94FCF0;
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	background-size: 100%;
+
+	@include breakpoint(baby-bear) {
+		background-position: 0 0;
+		background-size: cover;
+	}
+}
+
+
+#mario-power-ups {
+	width: auto;
+	margin: 0 auto 40px auto;
+	text-align: center;
+	height: auto;
+
+	@include breakpoint(baby-bear) {
+		width: 320px;
+		margin: 0 auto;
+		position: relative;
+	}
+	a {
+		margin: 0;
+		width: 60px;
+		height: 60px;
+		line-height: 55px;
+		border-radius: 100px;
+		display: inline-block;
+		text-align: center;
+		background-color: #fff;
+		border: 1px solid transparent;
+		@include transitionFast;
+
+		& span {
+			position: relative;
+			top: 2px;
+			background-image: url(/images/8bit-era/super-mario-bros-3/icon-powerUps.png);
+			background-repeat: no-repeat;
+			width: 40px;
+			height: 40px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		&#hammer-power span {
+			background-position: 0 0;
+		}
+		&#shoe-power span {
+			background-position: -80px 0;
+		}
+		&#frog-power span {
+			background-position: 0 -40px;
+		}
+		&#tanooki-power span {
+			background-position: -40px -40px;
+		}
+		&#raccoon-power span {
+			background-position: -80px -40px;
+		}
+	}
+}
+
+@-webkit-keyframes poof {
+  from {
+  	background-image: url(/images/8bit-era/super-mario-bros-3/transform-poof1.png);
+  }
+  to {
+  	background-image: url(/images/8bit-era/super-mario-bros-3/transform-poof2.png);
+  }
+}
+
+#super-mario-bros-3 {
+	.main-stage {
+		@include breakpoint(baby-bear) {
+			padding-bottom: 100px;
+		}
+	}
+	#mario-wrapper {
+		position: relative;
+		width: 335px; // length of the platform
+		margin: 0 auto;
+
+		@include breakpoint(baby-bear) {
+			width: 320px;
+		}
+	}
+	#mario {
+		position: relative;
+		background: url(/images/8bit-era/super-mario-bros-3/mario.png) top left;
+		width: 120px;
+		height: 120px;
+		display: block;
+		text-align: center;
+		margin: 0 auto;
+
+		&.transformed {
+			display: none;
+		}
+	}
+
+	.transformed {
+		display: none;
+		z-index: 10;
+		position: relative;
+		margin: 0 auto;
+		width: 120px;
+		height: 120px;
+		background-color: transparent;
+		background-repeat: no-repeat !important;
+		background-position: top left;
+
+		&.as-hammer {background: url(/images/8bit-era/super-mario-bros-3/as-hammer.png);}
+		&.as-shoe {background: url(/images/8bit-era/super-mario-bros-3/as-shoe.png);}
+		&.as-frog {background: url(/images/8bit-era/super-mario-bros-3/as-frog.png);}
+		&.as-tanooki {background: url(/images/8bit-era/super-mario-bros-3/as-tanooki.png);}
+		&.as-raccoon {background: url(/images/8bit-era/super-mario-bros-3/as-raccoon.png);}
+	}
+
+	#poof {
+		display: none;
+		background-image: url(/images/8bit-era/super-mario-bros-3/transform-poof1.png);
+		background-repeat: no-repeat;
+		width: 80px;
+		height: 80px;
+		position: absolute;
+		z-index: 20;
+		bottom: 0;
+		left: 125px;
+		-webkit-animation: poof 200ms 1;
+  		-moz-animation:    poof 200ms 1;
+  		-o-animation:      poof 200ms 1;
+  		animation:         poof 200ms 1;
+	}
+
+	#platform {
+		display: block;
+		width: 192px;
+		height: 48px;
+		background-image: url(/images/8bit-era/super-mario-bros-3/brick.png);
+		background-repeat: repeat-x;
+		position: position;
+		margin: 0 auto;
+	}
+}
+
+.cloudly {
+	position: absolute;
+	z-index: -1;
+	background-image: url(/images/8bit-era/super-mario-bros-3/icon-clouds.png);
+	background-position: 0 0;
+	background-size: cover;
+	width: 135px;
+	height: 100px;
+
+	&.animate{
+		transition: left 300000ms linear;
+		-webkit-transition: left 300000ms linear;
+		left: 2000px !important;
+	}
+
+	@include breakpoint(baby-bear) {
+		display: none;
+	}
+}
+#cloud0 {
+	position: absolute;
+	top: 100px;
+	left: 0;
+
+	@include breakpoint(baby-bear) {
+		top: 50px;
+		left: -150px;
+	}
+}
+#cloud1 {
+	position: absolute;
+	top: 225px;
+	left: 400px;
+
+	@include breakpoint(baby-bear) {
+		top: 90px;
+		left: -75px;
+	}
+}
+#cloud2 {
+	background-position: -135px 0;
+	width: 197px;
+	top: 300px;
+	left: -300px;
+
+	@include breakpoint(baby-bear) {
+		background-position: -95px 0;
+		top: 120px;
+		left: 50px;
+		width: 135px;
+		height: 70px;
+	}
+}
+#cloud3 {
+	top: 50px;
+	left: 500px;
+}
+#cloud4 {
+	background-position: -135px 0;
+	width: 197px;
+	top: 300px;
+	left: 700px;
+
+	@include breakpoint(baby-bear) {
+		background-position: -95px 0;
+		top: 200px;
+		left: -50px;
+		width: 135px;
+		height: 70px;
+	}
+}
+
+
+

@@ -1,0 +1,125 @@
+.tweet-list {
+    position: absolute;
+    top: 5.857em;
+    padding: 0;
+    padding-right: 40px;
+    bottom: 2.857em;
+    left: 2.857em;
+    z-index: 0;
+    overflow: auto;
+    margin: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+    @include breakpoint(mama-bear) {
+        top: 4.36em;
+        right: 1.428em;
+        bottom: 1.428em;
+        left: 1.428em;
+    }
+
+    @include breakpoint(sister-bear) {
+        top: 3.8em;
+        right: 1.428em;
+        bottom: 1.428em;
+        left: 1.428em;
+    }
+
+    @include breakpoint(baby-bear) {
+        position: static;
+        height: 400px;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+    }
+}
+
+.tweet {
+    margin: 0 0 1.428em;
+    padding: 0;
+    overflow: hidden;
+}
+    .tweet--new {
+        display: none;
+    }
+
+    .tweet--featured {
+        color: #888;
+    
+        .tweet__retweet {
+            background-color: $red;
+            color: #fff;
+            line-height: 42px;
+            padding: 0 12px 0 10px;
+            font-family: $proxima-nova-bold;
+            margin-top: 10px;
+
+            i {
+                font-size: 22px;
+                position: relative;
+                top: 2px;
+            }
+        }
+    }   
+
+    .tweet__user {
+        text-decoration: none;
+        font-family: $proxima-nova-bold;
+        display: block;
+        color: $red;
+
+        .tweet--featured & {
+            display: inline;
+        }
+
+    }
+
+    .tweet__avatar {
+        display: inline;
+        float: left;
+        width: 4.285em;
+        height: 4.285em;
+        margin-right: -4.285em;
+        border-color: #dbdbdb;
+        border-width: .357em;
+        border-style: solid;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .tweet__content {
+
+        .tweet--featured & {
+            padding-top: .714em;
+            margin-left: 5.714em;
+        }
+
+        a {
+            color: #b4b4b4;
+
+            .tweet--featured & {
+                color: white;
+            }
+        }
+    }
+
+    .tweet__time {
+        color: #4e4e4e;
+        font-size: .857em;
+    }
+
+.tweet-alert {
+    color: white;
+}
+
+    .tweet-alert__button {
+        display: block;
+        color: white;
+        background: #ff0000;
+        padding: 1.4em;
+        text-align: center;
+    }

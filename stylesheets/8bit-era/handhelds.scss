@@ -1,0 +1,160 @@
+.handhelds{
+	background: #1c1c1c url(../images/8bit-era/handhelds/background.jpg) 0 0 no-repeat;
+	background-size:100% 100%;
+	display:block !important;//Override display:table.
+	$babyBearScale:2/3;
+	$sisterBearScale:3/4;
+	.main-stage{
+		position: relative;/* Allow absolute positioning of children. */
+		display:block !important;//Override display:table-cell.
+		::selection {
+			background: transparent;//Don't show a selection color, so it feels less like a website.
+			}
+		::-moz-selection {
+			background: transparent; /* Firefox */
+		}
+		-webkit-user-select: none;
+		cursor:default;//Always use pointer, so it feels less like a website.
+		display:block;//Override display:table, so it can fill the space.
+		.handhelds__art--mobile{
+			display:none;
+		}
+		@include breakpoint(papa-bear){/* 1300+. See bits.scss */
+			padding-right:500px;
+		}
+		@include breakpoint(mama-bear){/* 960 - 1300 */
+			padding-right:400px;
+		}
+		@include breakpoint(sister-bear){/* 770 - 960 */
+			padding-right:320px;
+		}
+		@include breakpoint(baby-bear){/* < 770px */
+			$headerBarHeight:40px;
+			padding-right:0;
+			background-position-y: $headerBarHeight;
+			height:70%;//Adjust height as the text area moves to the bottom.
+			.handhelds__art{
+				display:none !important;
+			}
+			.handhelds__art--mobile{
+				display:table;//Allow vertical alignment (part 1).
+				width:100%;
+				height:100%;
+				>.inner{
+					display:table-cell;//Allow vertical alignment (part 2).
+					width:100%;
+					height:100%;
+					vertical-align:bottom;
+					img{
+						width:100%;
+					}
+				}
+			}
+		}
+		.handhelds__art{
+			width:100%;
+			height:100%;
+			display:none;//Hidden until first layout is completed in script.
+			//background:grey;//Debug
+			>.inner{
+				position: absolute;//Allow centering on screen.
+				top:0;
+				left:0;
+				//height:10px;width:10px;background: blue;//Debug
+				-webkit-perspective: 100px;
+				   -moz-perspective: 100px;
+				        perspective: 100px;
+				-webkit-perspective-origin: 50% 50%;
+				   -moz-perspective-origin: 50% 50%;
+				        perspective-origin: 50% 50%;
+		        .handhelds__consoles{
+			        position: relative;//Allow children to be absolutely positioned.
+					.handhelds__console{
+						position: absolute;//Allow full control over positioning.
+						top:0;//Position is overriden by script.
+						left:0;//Position is overriden by script.
+						-webkit-transform: translate3d(100px,100px,10px);
+						   -moz-transform: translate3d(100px,100px,10px);
+						        transform: translate3d(100px,100px,10px);
+						>.inner{
+							position:relative;//Allow children to be absolutely positioned.
+							video{
+								//display:none;
+								position: absolute;//Float above the device.
+								-webkit-transform-style: preserve-3d;
+								   -moz-transform-style: preserve-3d;
+								        transform-style: preserve-3d;
+								-webkit-backface-visibility: hidden;//Get rid of jaggy edges, since the videos are rotated. See http://stackoverflow.com/questions/6492027/css-transform-jagged-edges-in-chrome
+								   -moz-backface-visibility: hidden;
+								        backface-visibility: hidden;
+								img{
+									
+								}
+							}
+							img.handhelds__device{//The physical device
+								
+							}
+						}
+						&.handhelds__game-boy{
+							z-index:2;
+							>.inner{
+								width:393px;
+								height:525px;
+								video{
+									//display:none;//Hidden by default.
+									-webkit-transform: rotateZ(13.2deg);
+									   -moz-transform: rotateZ(13.2deg);
+									        transform: rotateZ(13.2deg);
+									top:92px;
+									left:144px;
+									width:155px;
+								}
+							}
+						}
+						&.handhelds__game-boy-advance{
+							z-index:0;
+							>.inner{
+								width:506px;
+								height:296px;
+								video{
+									-webkit-transform: rotateZ(5deg);
+									   -moz-transform: rotateZ(5deg);
+									        transform: rotateZ(5deg);
+									top:62px;
+									left:150px;
+									width:210px;
+								}
+							}
+						}
+						&.handhelds__nintendo-ds{
+							z-index:1;
+							>.inner{
+								width:563px;
+								height:580px;
+								$rotate: -16.5deg;
+								$width: 210px;
+								.video-1{
+									width:$width;
+									-webkit-transform: rotateZ($rotate);
+									   -moz-transform: rotateZ($rotate);
+									        transform: rotateZ($rotate);
+									top:93px;
+									left:142px;
+								}
+								.video-2{
+									width:$width;
+									-webkit-transform: rotateZ($rotate);
+									   -moz-transform: rotateZ($rotate);
+									        transform: rotateZ($rotate);
+									top:325px;
+									left:212px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+

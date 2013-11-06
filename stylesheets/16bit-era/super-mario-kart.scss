@@ -1,0 +1,113 @@
+#super-mario-kart{
+
+	.main-stage{
+		position:relative;
+		background: #ffff80 url('/images/16bit-era/super-mario-kart/background.png') repeat-x 0 bottom;
+		@include breakpoint(baby-bear) {
+				height:70%;
+				display:block;
+				background-size: 378px 324px;
+		}
+	}
+	.kart.toad{
+		background:url(/images/16bit-era/super-mario-kart/toad.png) no-repeat;
+		background-position:0 0;
+		bottom:31px;
+		z-index:8;
+		@include breakpoint(baby-bear) {
+			bottom:12px;
+			background-size:584.4px 57.6px;
+		}
+
+	}
+	.kart.dk{
+		background:url(/images/16bit-era/super-mario-kart/dk.png) no-repeat;
+		bottom:42px;
+		z-index:7;
+		@include breakpoint(baby-bear) {
+			bottom:20px;
+			background-size:584.4px 57.6px;
+		}
+	}
+	.kart.yoshi{
+		background:url(/images/16bit-era/super-mario-kart/yoshi.png) no-repeat;
+		bottom:53px;
+		z-index:6;
+		@include breakpoint(baby-bear) {
+			bottom:28px;
+			background-size:584.4px 57.6px;
+		}
+	}
+	.kart.peach{
+		background:url(/images/16bit-era/super-mario-kart/peach.png) no-repeat;
+		bottom:64px;
+		z-index:5;
+		@include breakpoint(baby-bear) {
+			bottom:36px;
+			background-size:584.4px 57.6px;
+		}
+	}
+	.kart.goomba{
+		background:url(/images/16bit-era/super-mario-kart/goomba.png) no-repeat;
+		bottom:75px;
+		z-index:4;
+		@include breakpoint(baby-bear) {
+			bottom:44px;
+			background-size:584.4px 57.6px;
+		}
+	}
+	.kart.bowser{
+		background:url(/images/16bit-era/super-mario-kart/bowser.png) no-repeat;
+		bottom:86px;
+		z-index:3;
+		@include breakpoint(baby-bear) {
+			bottom:52px;
+			background-size:584.4px 57.6px;
+		}
+	}
+	.kart.mario{
+		background:url(/images/16bit-era/super-mario-kart/mario.png) no-repeat;
+		bottom:97px;
+		z-index:2;
+		@include breakpoint(baby-bear) {
+			bottom:60px;
+			background-size:584.4px 57.6px;
+		}
+	}
+	.kart.luigi{
+		background:url(/images/16bit-era/super-mario-kart/luigi.png) no-repeat;
+		bottom:108px;
+		z-index:1;
+		
+		@include breakpoint(baby-bear) {
+			bottom:68px;
+			background-size:584.4px 57.6px;
+		}
+	}
+	.kart{
+		cursor:pointer;
+		width:100px;
+		height:93px;
+		position:absolute;
+		left:-100px;
+		background-position:0 0;
+		
+		@include breakpoint(baby-bear) {
+			width:60px;
+			height:57.6px;
+		}
+	}
+
+}
+
+@-webkit-keyframes drive {
+	from {left:-100px;}
+	to {left:150%;}
+}
+@-webkit-keyframes driveBack {
+	100%   { left: -100px }
+}
+@-webkit-keyframes bounce {
+	50%   { margin-bottom: -3px }
+}
+

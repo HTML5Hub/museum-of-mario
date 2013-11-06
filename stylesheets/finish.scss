@@ -1,0 +1,166 @@
+body.finish {
+	.article-wrapper, 
+	#twitter-bug 
+		{display: none;}
+}
+
+#final-screen {
+	display: table;
+	background: #08C;
+	background-image: url(/js/vendor/edge.js/finish/images/bg_brick.jpg), #08C;
+	background: url(/js/vendor/edge.js/finish/images/bg_brick.jpg), #08C;
+	background-repeat: repeat-x;
+	background-position: bottom;
+	
+	
+	@include breakpoint(mama-bear) {
+		background-size:38px;
+	}
+	
+	@include breakpoint(sister-bear) {
+		background-size:34px;
+	}
+
+	@include breakpoint(baby-bear) {
+		background-size:29px;
+	}
+	
+	.cover-block {
+		position: relative;
+		z-index: 10;
+		display: table-cell;
+		vertical-align: middle;
+		width: 50%;
+		padding: 0 60px 0 50%;
+
+		@include breakpoint(baby-bear) {
+			width: 100%;
+			padding: 20px;
+			display: block;
+			padding: 110px 20px 0 20px;
+			top: 40px;
+		}
+
+		p {
+			width: 100%;
+		}
+
+		#contest-block {
+			display: block !important;
+			position: relative;
+			width: 100%;
+			margin: 40px 0;
+			right: 0;
+
+			@include breakpoint(mama-bear) {
+				margin: 0;
+			}
+
+			@include breakpoint(baby-bear) {
+				position: absolute;
+				top: 0;
+				margin: 0;
+			}
+
+			p {
+				font-size: 14px;
+				line-height: 18px;
+			}
+
+			img {
+				margin: 0 20px 20px 0;
+			}
+		}
+
+		footer {
+			padding-top: 20px;
+			margin-top: 90px;
+
+			@include breakpoint(mama-bear) {
+				margin-top: 40px;
+			}
+
+			@include breakpoint(baby-bear) {
+				margin: 0;
+				padding: 0;
+			}
+
+			p {
+				@include small-p;
+
+				@include breakpoint(baby-bear) {
+					font-size: 9px;
+					line-height: 9px;
+				}
+			}
+			
+			ul li {
+				list-style-type: none;
+				display: inline-block;
+				margin: 5px 5px 5px 0;
+
+				@include breakpoint(baby-bear) {
+					display: block;
+					margin: 0 5px 0 0;
+				}
+
+				a {
+					@include small-p;
+					color: #fff;
+					border-bottom: 1px dotted #fff;
+					padding-bottom: 1px;
+
+					@include breakpoint(baby-bear) {
+						font-size: 9px;
+						line-height: 9px;
+					}
+
+					&:hover {
+						border-bottom: 1px solid #fff;
+					}
+				}
+			}
+		}
+	}
+	
+	.main-stage{
+		position:absolute;
+		bottom:0;
+		left:100px;
+		width:800px;
+		height:800px;
+		
+		@include breakpoint(mama-bear) {
+			left:80px;
+			transform: scale(0.8) !important;
+			-webkit-transform: scale(0.8) !important;
+			-webkit-transform-origin: 0 100%;
+			transform-origin: 0 100%;
+		}
+		
+		@include breakpoint(sister-bear) {
+			left:80px;
+			ransform: scale(0.7) !important;
+			-webkit-transform: scale(0.7) !important;
+			-webkit-transform-origin: 0 100%;
+			transform-origin: 0 100%;
+		}
+
+		@include breakpoint(baby-bear) {
+			left:0px;
+			transform: scale(0.6) !important;
+			-webkit-transform: scale(0.6) !important;
+			-webkit-transform-origin: 0 100%;
+			transform-origin: 0 100%;
+		}
+		
+		#animationContainer > div{
+			background:transparent !important;
+		}
+		
+		#animationContainer > div > div:last-child{
+			left:60px !important;
+			top:120px !important;
+		}
+	}
+}
